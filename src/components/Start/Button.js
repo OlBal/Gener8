@@ -1,9 +1,15 @@
 import React from "react";
 
-const Button = (type, onClick, buttonClass, label) => {
-  <button label={label} onClick={handleClick} type={type} buttonClass={}>
+const Button = ({ type, handleClick, buttonClass, label, disabled }) => (
+  <button
+    label={label}
+    onClick={handleClick}
+    type={type}
+    className={buttonClass}
+    disabled={disabled}
+  >
     {label}
-  </button>;
-};
+  </button>
+);
 
 export default Button;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import List from "../PlayerList";
-
+import PlayerList from "../PlayerList";
+import Button from "./Button";
 class Start extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +19,6 @@ class Start extends Component {
   handleAdd = (e) => {
     const { players, playerName } = this.state;
     e.preventDefault();
-
     this.setState({
       playerName: playerName,
       players: [...players, playerName],
@@ -33,11 +32,13 @@ class Start extends Component {
       <div>
         <form>
           <input value={playerName} onChange={this.handleChange} />
-          <button type="submit" onClick={this.handleAdd}>
-            Submit
-          </button>
+          <Button
+            label="Add A Player"
+            type="submit"
+            handleClick={this.handleAdd}
+          />
         </form>
-        <List players={players} />
+        <PlayerList players={players} />
       </div>
     );
   }

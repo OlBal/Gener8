@@ -1,10 +1,12 @@
 import React from "react";
-const List = (props) => (
-  <ul>
+const PlayerList = (props, { listItem, listGroup }) => (
+  <ul className={listGroup}>
     {props.players.map((item, index) => (
-      <li key={index}>{item}</li>
+      <li className={listItem} key={index}>
+        {item}
+      </li>
     ))}
   </ul>
 );
 
-export default List;
+export default PlayerList;
