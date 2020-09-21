@@ -1,5 +1,4 @@
 import React from "react";
-import { players } from "./index";
 
 const PlayerList = ({ players }) => (
   <ul className="playerListGroup">

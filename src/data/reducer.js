@@ -1,26 +1,24 @@
 import initial from "./initial";
 
-const savePlayers = (state, { players }) => ({
-  ...state,
-  players: players,
-});
+// const savePlayers = (state, { players }) => ({
+//   ...state,
+//   players: players,
+// });
 
 const addPlayers = (state, { players, playerName }) => {
   return {
     ...state,
     playerName: playerName,
-    players: [...players, playerName],
+    players: console.log([...players, playerName], 1),
   };
 };
 
 const resetReducer = (state) => {
-  return { ...initial };
+  return console.log({ ...initial }, 2);
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "SAVE_PLAYERS":
-      savePlayers({ state, action });
     case "ADD_PLAYERS":
       addPlayers({ state, action });
     case "RESET":

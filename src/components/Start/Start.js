@@ -5,12 +5,12 @@ class Start extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerName: this.props.playerName,
+      playerName: console.log(this.props.playerName, 1),
       players: this.props.players,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = (e) => {
@@ -21,12 +21,12 @@ class Start extends Component {
     this.props.handleAdd(this.state.playerName);
   };
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { players } = this.state;
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const { players } = this.state;
 
-    this.props.handleSave(players);
-  };
+  //   this.props.handleSave(players);
+  // };
 
   render() {
     const { playerName } = this.state;
@@ -41,18 +41,18 @@ class Start extends Component {
             handleClick={this.handleClick}
           />
 
-          <Button
+          {/* <Button
             label="Start Tournament"
             type="submit"
             handleClick={this.handleSubmit}
-          />
+          /> */}
 
           <Button
             label="Reset Your Roster"
             handleClick={this.props.handleReset}
           />
         </form>
-        <PlayerList />
+        {/* <PlayerList /> */}
       </div>
     );
   }

@@ -1,14 +1,14 @@
-export const savePlayers = ({ players }) => {
-  return {
-    players: players,
-    type: "SAVE_PLAYERS",
-  };
-};
+// export const savePlayers = ({ players }) => {
+//   return {
+//     players: players,
+//     type: "SAVE_PLAYERS",
+//   };
+// };
 
 export const addPlayers = (players, playerName) => {
   return {
     type: "ADD_PLAYER",
-    players: [...players, playerName],
+    players: console.log([...players, playerName], 4),
   };
 };
 
