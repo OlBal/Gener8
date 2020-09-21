@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PlayerList from "../PlayerList/PlayerList";
-import Button from "../Button";
+import Button from "../Button/Button";
 class Start extends Component {
   constructor(props) {
     super(props);
@@ -9,29 +9,36 @@ class Start extends Component {
       players: this.props.players,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleAdd = this.handleAdd.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = (e) => {
     this.setState({ playerName: e.target.value });
   };
 
-  handleAdd = (e) => {
+  handleClick = () => {
+    this.props.handleAdd(this.state.playerName);
+  };
+
+  handleSubmit = (e) => {
     e.preventDefault();
-    this.props.handleAdd(e.currentTarget.value);
+    const { players } = this.state;
+
+    this.props.handleSave(players);
   };
 
   render() {
-    const { players, playerName } = this.state;
+    const { playerName } = this.state;
 
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input value={playerName} onChange={this.handleChange} />
           <Button
             label="Add A Player"
             type="submit"
-            handleClick={this.handleAdd}
+            handleClick={this.handleClick}
           />
 
           <Button
@@ -42,11 +49,10 @@ class Start extends Component {
 
           <Button
             label="Reset Your Roster"
-            type="submit"
-            handleClick={this.handleReset}
+            handleClick={this.props.handleReset}
           />
         </form>
-        <PlayerList players={players} />
+        <PlayerList />
       </div>
     );
   }

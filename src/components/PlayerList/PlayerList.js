@@ -1,24 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
+import { players } from "./index";
 
-class PlayerList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      players: this.props.players,
-    };
-  }
+const PlayerList = ({ players }) => (
+  <ul className="playerListGroup">
+    {players.map((item, index) => (
+      <li className="playerList" key={index}>
+        {item}
+      </li>
+    ))}
+  </ul>
+);
 
-  render() {
-    return;
-    <>
-      <ul className="playerListGroup">
-        {this.props.players.map((item, index) => (
-          <li className="playerList" key={index}>
-            {item}
-          </li>
-        ))}
-      </ul>
-    </>;
-  }
-}
 export default PlayerList;
