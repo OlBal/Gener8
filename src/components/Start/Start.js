@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import PlayerList from "../PlayerList";
-import Button from "../Button";
+import PlayerList from "../PlayerList/PlayerList";
+import Button from "../Button/Button";
 import shuffle from "./shuffle";
 
-export default class Start extends Component {
+class Start extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerName: "",
-      players: [],
-      pairs: [],
+      playerName: this.props.playerName,
+      players: console.log(this.props.players),
+      pairs: this.props.pairs,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleShuffle = this.handleShuffle.bind(this);
@@ -43,8 +43,8 @@ export default class Start extends Component {
   };
 
   render() {
-    const { players, playerName } = this.state;
-    const disabled = players.length === 8 ? true : false;
+    const { playerName } = this.props;
+    // const disabled = this.props.players.length === 8 ? true : false;
 
     return (
       <div>
@@ -55,12 +55,15 @@ export default class Start extends Component {
             value={playerName}
             onChange={this.handleChange}
           />
-          <Button label="Add A Player" type="submit" disabled={disabled} />
+          <Button label="Add A Player" type="submit" />
         </form>
 
         <Button label="Shuffle" handleClick={this.handleShuffle} />
-        <PlayerList players={players} />
+        <Button label="Reset" handleClick={this.handleReset} />
+        <PlayerList />
       </div>
     );
   }
 }
+
+export default Start;
