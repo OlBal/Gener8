@@ -1,4 +1,4 @@
-function Shuffle(arr, pairChunks) {
+function shuffle(arr, pairChunks) {
   /* Takes array of names from Start and shuffles them. */
 
   arr.sort(() => 0.5 - Math.random());
@@ -18,4 +18,4 @@ function Shuffle(arr, pairChunks) {
   }
   return pairs;
 }
-export default Shuffle;
+export default shuffle;
