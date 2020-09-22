@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../../../src/scss/App.scss";
+import "../../App.scss";
 
 import PlayerList from "../PlayerList";
 import Button from "../Button/Button";
@@ -49,20 +49,38 @@ class Start extends Component {
     // const disabled = this.props.players.length === 8 ? true : false;
 
     return (
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <input
-            type="text"
-            className="form-control"
-            value={playerName}
-            onChange={this.handleChange}
-          />
-          <Button label="Add A Player" type="submit" />
-        </form>
+      <div className="wrapper__container">
+        <div className="container">
+          <h1> PING PONG</h1>
+          <h2> TOURNAMENT</h2>
 
-        <Button label="Shuffle" handleClick={this.handleShuffle} />
-        <Button label="Reset" handleClick={this.handleReset} />
-        <PlayerList />
+          <form className="form grid-child1" onSubmit={this.onSubmit}>
+            <input
+              className="form-control"
+              type="text"
+              value={playerName}
+              onChange={this.handleChange}
+            />
+            <Button
+              buttonClass="button grid-child2"
+              label="Add A Player"
+              type="submit"
+            />
+          </form>
+
+          <Button
+            buttonClass="button grid-child3"
+            label="Shuffle"
+            handleClick={this.handleShuffle}
+          />
+
+          <Button
+            buttonClass="button grid-child4"
+            label="Reset"
+            handleClick={this.handleReset}
+          />
+          <PlayerList />
+        </div>
       </div>
     );
   }
