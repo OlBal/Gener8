@@ -1,58 +1,62 @@
 import React, { Component } from "react";
-import PlayerList from "../PlayerList/PlayerList";
-import Button from "../Button/Button";
+import PlayerList from "../PlayerList";
+import Button from "./Button";
+import Shuffle from "./Shuffle";
+
 class Start extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerName: [],
+      playerName: "",
+      players: [],
+      pairs: [],
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleAdd = this.handleAdd.bind(this);
+    this.handleShuffle = this.handleShuffle.bind(this);
   }
 
   handleChange = (e) => {
     this.setState({ playerName: e.target.value });
   };
 
-  handleClick = () => {
-    this.handleAdd(this.state.playerName);
+  handleAdd = (e) => {
+    e.preventDefault();
+    const { players, playerName } = this.state;
+    this.setState({
+      playerName: playerName,
+      players: [...players, playerName],
+    });
   };
 
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   const { players } = this.state;
+  /* Shuffle function to randomise and create new pairing arrays which  */
 
-  //   this.props.handleSave(players);
-  // };
+  handleShuffle = () => {
+    const { players, pairs } = this.state;
+    const arr = [...players];
+    this.setState({
+      pairs: Shuffle(arr, 2),
+    });
+  };
 
   render() {
-    const { playerName } = this.state;
+    const { players, playerName } = this.state;
+    const disabled = players.length === 8 ? true : false;
 
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form>
           <input value={playerName} onChange={this.handleChange} />
           <Button
             label="Add A Player"
             type="submit"
-            handleClick={this.handleClick}
-          />
-
-          {/* <Button
-            label="Start Tournament"
-            type="submit"
-            handleClick={this.handleSubmit}
-          /> */}
-
-          <Button
-            label="Reset Your Roster"
-            handleClick={this.props.handleReset}
+            handleClick={this.handleAdd}
+            disabled={disabled}
           />
         </form>
 
-        {/* <PlayerList /> */}
+        <Button label="Shuffle" handleClick={this.handleShuffle} />
+        <PlayerList players={players} />
       </div>
     );
   }
