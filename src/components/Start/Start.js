@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import PlayerList from "../PlayerList";
 import Button from "./Button";
+import Shuffle from "./Shuffle";
+
 class Start extends Component {
   constructor(props) {
     super(props);
@@ -19,35 +21,41 @@ class Start extends Component {
   };
 
   handleAdd = (e) => {
-    const { players, playerName } = this.state;
     e.preventDefault();
+    const { players, playerName } = this.state;
+
     this.setState({
       playerName: playerName,
       players: [...players, playerName],
     });
   };
 
+  /* A Shuffle function to randomise and create new pairinng arrays */
+
   handleShuffle = () => {
-    const { players } = this.state;
+    const { players, pairs } = this.state;
+    const arr = [...players];
     this.setState({
-      players: players.sort(() => Math.random() - 0.5),
+      pairs: Shuffle(arr, 2),
     });
   };
 
   render() {
     const { players, playerName } = this.state;
+    const disabled = players.length === 8 ? true : false;
 
     return (
       <div>
-        <form onSubmit="this.reset()">
+        <form>
           <input value={playerName} onChange={this.handleChange} />
           <Button
             label="Add A Player"
             type="submit"
             handleClick={this.handleAdd}
-            disabled={players.length === 8 ? true : false}
+            disabled={disabled}
           />
         </form>
+        <div className="pairs"></div>
         <Button label="Shuffle" handleClick={this.handleShuffle} />
         <PlayerList players={players} />
       </div>
