@@ -7,8 +7,8 @@ import thunk from "redux-thunk";
 
 const initial = {
   playerName: "",
-  players: [1, 2, 3, 4, 5],
-  pairs: [1, 2, 3, 4, 5],
+  players: [],
+  pairs: [],
 };
 
 export const reset = () => {

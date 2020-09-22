@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import PlayerList from "../PlayerList/PlayerList";
+import "../../../src/scss/App.scss";
+
+import PlayerList from "../PlayerList";
 import Button from "../Button/Button";
 import shuffle from "./shuffle";
 
@@ -8,7 +10,7 @@ class Start extends Component {
     super(props);
     this.state = {
       playerName: this.props.playerName,
-      players: console.log(this.props.players),
+      players: this.props.players,
       pairs: this.props.pairs,
     };
     this.handleChange = this.handleChange.bind(this);
@@ -43,7 +45,7 @@ class Start extends Component {
   };
 
   render() {
-    const { playerName } = this.props;
+    const { playerName } = this.state;
     // const disabled = this.props.players.length === 8 ? true : false;
 
     return (
