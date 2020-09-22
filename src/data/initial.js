@@ -1,6 +1,5 @@
 const initial = {
-  playerName: "",
-  players: [],
+  playerName: [],
 };
 
 export default initial;

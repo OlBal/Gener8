@@ -5,8 +5,7 @@ class Start extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerName: console.log(this.props.playerName, 1),
-      players: this.props.players,
+      playerName: [],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -18,7 +17,7 @@ class Start extends Component {
   };
 
   handleClick = () => {
-    this.props.handleAdd(this.state.playerName);
+    this.handleAdd(this.state.playerName);
   };
 
   // handleSubmit = (e) => {
@@ -52,6 +51,7 @@ class Start extends Component {
             handleClick={this.props.handleReset}
           />
         </form>
+
         {/* <PlayerList /> */}
       </div>
     );

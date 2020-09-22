@@ -5,10 +5,10 @@
 //   };
 // };
 
-export const addPlayers = (players, playerName) => {
+export const addPlayers = (playerName) => {
   return {
-    type: "ADD_PLAYER",
-    players: console.log([...players, playerName], 4),
+    type: "ADD_PLAYERS",
+    playerName: playerName,
   };
 };
 

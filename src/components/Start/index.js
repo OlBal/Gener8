@@ -2,8 +2,8 @@ import { connect } from "react-redux";
 import Start from "./Start";
 import { addPlayers, reset } from "../../data/actions";
 
-const mapStateToProps = (state) => {
-  console.log();
+const mapStateToProps = ({ playerName }) => {
+  playerName;
 };
 
 const mapDispatchToProps = (dispatch) => {
