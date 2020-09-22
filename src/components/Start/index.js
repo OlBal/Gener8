@@ -1,16 +1,12 @@
 import { connect } from "react-redux";
+import { addName } from "../../../src/index";
 import Start from "./Start";
-import { addPlayers, reset } from "../../data/actions";
-
-const mapStateToProps = ({ playerName }) => {
-  playerName;
-};
-
-const mapDispatchToProps = (dispatch) => {
+const mapStateToProps = (state) => {
   return {
-    // handleSave: (players) => dispatch(savePlayers(players)),
-    handleAdd: (playerName) => dispatch(addPlayers(playerName)),
-    handleReset: () => dispatch(reset()),
+    players: state.players,
+    playerName: state.playerName,
+    pairs: state.pairs,
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Start);
+
+export default connect(mapStateToProps)(Start);

@@ -1,64 +1,69 @@
 import React, { Component } from "react";
-import PlayerList from "../PlayerList";
-import Button from "./Button";
-import Shuffle from "./Shuffle";
+import PlayerList from "../PlayerList/PlayerList";
+import Button from "../Button/Button";
+import shuffle from "./shuffle";
 
 class Start extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerName: "",
-      players: [],
-      pairs: [],
+      playerName: this.props.playerName,
+      players: console.log(this.props.players),
+      pairs: this.props.pairs,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleAdd = this.handleAdd.bind(this);
     this.handleShuffle = this.handleShuffle.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
+
+  /* Watches value in form for player's input */
 
   handleChange = (e) => {
     this.setState({ playerName: e.target.value });
   };
 
-  handleAdd = (e) => {
+  /* Add new player to players array */
+  onSubmit = (e) => {
     e.preventDefault();
     const { players, playerName } = this.state;
+
     this.setState({
       playerName: playerName,
       players: [...players, playerName],
     });
   };
 
-  /* Shuffle function to randomise and create new pairing arrays which  */
+  /* Shuffle function to randomise & create new pairings */
 
   handleShuffle = () => {
-    const { players, pairs } = this.state;
-    const arr = [...players];
+    const arr = [...this.state.players];
     this.setState({
-      pairs: Shuffle(arr, 2),
+      pairs: shuffle(arr, 2),
     });
   };
 
   render() {
-    const { players, playerName } = this.state;
-    const disabled = players.length === 8 ? true : false;
+    const { playerName } = this.props;
+    // const disabled = this.props.players.length === 8 ? true : false;
 
     return (
       <div>
-        <form>
-          <input value={playerName} onChange={this.handleChange} />
-          <Button
-            label="Add A Player"
-            type="submit"
-            handleClick={this.handleAdd}
-            disabled={disabled}
+        <form onSubmit={this.onSubmit}>
+          <input
+            type="text"
+            className="form-control"
+            value={playerName}
+            onChange={this.handleChange}
           />
+          <Button label="Add A Player" type="submit" />
         </form>
 
         <Button label="Shuffle" handleClick={this.handleShuffle} />
-        <PlayerList players={players} />
+        <Button label="Reset" handleClick={this.handleReset} />
+        <PlayerList />
       </div>
     );
   }
 }
+
 export default Start;
