@@ -3,9 +3,7 @@ import React, { Component } from "react";
 class PlayerList extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      players: console.log(this.props.players),
-    };
+    this.state = { players: this.props.players };
   }
 
   render() {
