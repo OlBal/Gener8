@@ -1,5 +1,5 @@
 function Shuffle(arr, pairChunks) {
-  /* Takes array of names from Start and shuffles them.fun */
+  /* Takes array of names from Start and shuffles them. */
 
   arr.sort(() => 0.5 - Math.random());
 
