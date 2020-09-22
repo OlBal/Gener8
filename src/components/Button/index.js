@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
 import Button from "./Button";
-import { reset } from "../../data/actions";
+import { reset } from "../../index";
 
 const mapDispatchToProps = (dispatch) => {
-  console.log(1);
   return {
     handleReset: () => dispatch(reset()),
   };

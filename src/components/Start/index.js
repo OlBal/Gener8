@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { addName } from "../../../src/index";
+// import { addName } from "../../../src/index";
 import Start from "./Start";
 const mapStateToProps = (state) => {
   return {
