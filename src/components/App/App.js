@@ -1,6 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 import Settings from "../Settings";
 import Tournament from "../Tournament";
-// import "../App.scss";
-const App = ({ round }) => <>{round !== 0 ? <Settings /> : <Tournament />}</>;
+class App extends Component {
+  render() {
+    return !this.props.view ? <Settings /> : <Tournament />;
+  }
+}
+
 export default App;

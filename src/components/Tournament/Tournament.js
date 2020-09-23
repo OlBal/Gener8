@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../../App.scss";
-// import Button from "../Button/Button";
+import Button from "../Button/Button";
 
 class Tournament extends Component {
   constructor(props) {
@@ -8,8 +8,29 @@ class Tournament extends Component {
     this.state = {};
   }
 
+  /* Handles reset of viewSetting's state to go 
+  back to home screen */
+
+  handleBack = () => {
+    this.props.handleBackButton(this.state);
+  };
+
   render() {
-    return <div className="wrapper__container"></div>;
+    const { pairs } = this.props;
+    return (
+      <div className="wrapper__container">
+        <div className="container">
+          <h1> PING PONG</h1>
+          <h2> TOURNAMENT</h2>
+
+          <h1>{pairs[0]}</h1>
+          <h1>{pairs[(0)[1]]}</h1>
+          <h1>{pairs[0]}</h1>
+
+          <Button label="back" handleClick={this.handleBack} />
+        </div>
+      </div>
+    );
   }
 }
 

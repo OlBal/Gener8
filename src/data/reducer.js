@@ -1,4 +1,4 @@
-import shuffle from "./functions/pairs";
+import shuffle from "./functions/shuffle";
 import initial from "./initial";
 
 //Adds new player to global state array
@@ -10,14 +10,26 @@ const addPlayer = (state, { playerName }) => {
   };
 };
 
-const start = (state, { round }) => {
-  console.log(state.pairs);
+//Shuffles players array and outputs 4 pairs of players
 
+const playerPairs = (state) => {
   return {
     ...state,
-
-    round: round + 1,
     pairs: shuffle([...state.players], 2),
+  };
+};
+
+const backButton = (state) => {
+  return {
+    ...state,
+    view: true,
+  };
+};
+
+const startTournament = (state) => {
+  return {
+    ...state,
+    view: false,
   };
 };
 
@@ -26,7 +38,9 @@ const reducer = (state = initial, action) => {
     case "ADD_PLAYER":
       return addPlayer(state, action);
     case "START":
-      return start(state, action);
+      return startTournament(playerPairs(state, action));
+    case "BACK":
+      return backButton(state, action);
     case "CLEAR":
       return initial;
     default:
