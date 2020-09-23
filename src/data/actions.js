@@ -5,6 +5,13 @@ export const addPlayer = (value) => {
   };
 };
 
+export const start = (value) => {
+  return {
+    type: "START",
+    ...value,
+  };
+};
+
 export const clear = () => {
   return {
     type: "CLEAR",

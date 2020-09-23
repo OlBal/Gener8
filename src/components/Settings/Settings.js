@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../../App.scss";
 import Players from "../Players";
 import Button from "../Button/Button";
-import shuffle from "./shuffle";
 
 //
 
@@ -11,7 +10,6 @@ class Settings extends Component {
     super(props);
     this.state = {
       playerName: "",
-      pairs: this.props.pairs,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleStart = this.handleStart.bind(this);
@@ -34,16 +32,21 @@ class Settings extends Component {
 
   /* Shuffle function to randomise & create new pairings */
 
+  //Take players array -
+  //-shuffle them -
+  //-divided them into pairs.
+
+  //Go to next screen
+
+  //display new pairs
+
   handleStart = () => {
-    const arr = [...this.state.players];
-    this.setState({
-      pairs: shuffle(arr, 2),
-    });
+    this.props.handleStart(this.state);
   };
 
   render() {
     const { playerName } = this.state;
-    const { players } = this.props;
+    const { players, handleClear } = this.props;
     const disabled = players.length === 8 ? true : false;
 
     return (
@@ -69,16 +72,18 @@ class Settings extends Component {
 
           <Button
             buttonClass="button grid-child3"
-            label="Shuffle"
+            label="Start"
             handleClick={this.handleStart}
           />
 
           <Button
             buttonClass="button grid-child4"
             label="Reset"
-            handleClick={this.props.handleClear}
+            handleClick={handleClear}
           />
-          <Players />
+          <article className="player-list">
+            <Players />
+          </article>
         </div>
       </div>
     );
