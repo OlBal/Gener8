@@ -9,6 +9,12 @@ const addPlayer = (state, { playerName }) => {
   };
 };
 
+// const start = () => {
+//   return {
+//     ...state,
+//   };
+// };
+
 const reducer = (state = initial, action) => {
   switch (action.type) {
     case "ADD_PLAYER":

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../../App.scss";
 import Players from "../Players";
 import Button from "../Button/Button";
-import shuffle from "./shuffle";
+import shuffle from "../../data/functions/pairs";
 
 //
 
@@ -33,6 +33,14 @@ class Settings extends Component {
   };
 
   /* Shuffle function to randomise & create new pairings */
+
+  //Take players array -
+  //-shuffle them -
+  //-divided them into pairs.
+
+  //Go to next screen
+
+  //display new pairs
 
   handleStart = () => {
     const arr = [...this.state.players];
@@ -69,7 +77,7 @@ class Settings extends Component {
 
           <Button
             buttonClass="button grid-child3"
-            label="Shuffle"
+            label="Start"
             handleClick={this.handleStart}
           />
 

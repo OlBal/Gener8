@@ -9,6 +9,8 @@
 input {
   outline: none;
   border: none;
+  padding-top: 2rem;
+  padding-left: 10rem;
 }
 
 h1 h2 h3 h4 h5 h6 {
@@ -16,7 +18,7 @@ h1 h2 h3 h4 h5 h6 {
   font-family: "Helvetica";
 }
 
-li ul {
+li {
   list-style: none;
-  margin: 0;
+  text-decoration: none;
 }
