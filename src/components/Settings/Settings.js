@@ -1,43 +1,40 @@
 import React, { Component } from "react";
 import "../../App.scss";
-
-import PlayerList from "../PlayerList";
+import Players from "../Players";
 import Button from "../Button/Button";
 import shuffle from "./shuffle";
 
-class Start extends Component {
+//
+
+class Settings extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      playerName: this.props.playerName,
-      players: this.props.players,
+      playerName: "",
       pairs: this.props.pairs,
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleShuffle = this.handleShuffle.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.handleStart = this.handleStart.bind(this);
+    this.handleAddName = this.handleAddName.bind(this);
   }
 
-  /* Watches value in form for player's input */
+  // Watches value in form for player's input
 
   handleChange = (e) => {
     this.setState({ playerName: e.target.value });
   };
 
-  /* Add new player to players array */
-  onSubmit = (e) => {
-    e.preventDefault();
-    const { players, playerName } = this.state;
+  // Add new player to players array
 
-    this.setState({
-      playerName: playerName,
-      players: [...players, playerName],
-    });
+  handleAddName = (e) => {
+    e.preventDefault();
+    this.setState({ playerName: this.state.playerName });
+    this.props.handleAdd(this.state);
   };
 
   /* Shuffle function to randomise & create new pairings */
 
-  handleShuffle = () => {
+  handleStart = () => {
     const arr = [...this.state.players];
     this.setState({
       pairs: shuffle(arr, 2),
@@ -46,7 +43,8 @@ class Start extends Component {
 
   render() {
     const { playerName } = this.state;
-    // const disabled = this.props.players.length === 8 ? true : false;
+    const { players } = this.props;
+    const disabled = players.length === 8 ? true : false;
 
     return (
       <div className="wrapper__container">
@@ -54,7 +52,7 @@ class Start extends Component {
           <h1> PING PONG</h1>
           <h2> TOURNAMENT</h2>
 
-          <form className="form grid-child1" onSubmit={this.onSubmit}>
+          <form className="form grid-child1" onSubmit={this.handleAddName}>
             <input
               className="form-control"
               type="text"
@@ -65,25 +63,26 @@ class Start extends Component {
               buttonClass="button grid-child2"
               label="Add A Player"
               type="submit"
+              disabled={disabled}
             />
           </form>
 
           <Button
             buttonClass="button grid-child3"
             label="Shuffle"
-            handleClick={this.handleShuffle}
+            handleClick={this.handleStart}
           />
 
           <Button
             buttonClass="button grid-child4"
             label="Reset"
-            handleClick={this.handleReset}
+            handleClick={this.props.handleClear}
           />
-          <PlayerList />
+          <Players />
         </div>
       </div>
     );
   }
 }
 
-export default Start;
+export default Settings;

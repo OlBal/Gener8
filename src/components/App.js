@@ -1,8 +1,8 @@
 import React from "react";
-import Start from "./Start";
+import Settings from "./Settings";
 import "../App.scss";
 const App = () => {
-  return <Start />;
+  return <Settings />;
 };
 
 export default App;

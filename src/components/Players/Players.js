@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 
-class PlayerList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { players: this.props.players };
-  }
-
+class Players extends Component {
   render() {
-    const { players } = this.state;
+    const { players } = this.props;
     return (
       <ul className="listGroup">
         {players.map((item, index) => (
@@ -20,4 +15,4 @@ class PlayerList extends Component {
   }
 }
 
-export default PlayerList;
+export default Players;

@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import PlayerList from "./PlayerList";
+import Players from "./Players";
 
 const mapStateToProps = (state) => {
   return { players: state.players };
 };
 
-export default connect(mapStateToProps)(PlayerList);
+export default connect(mapStateToProps)(Players);
