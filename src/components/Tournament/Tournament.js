@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../../App.scss";
+import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 
 class Tournament extends Component {
@@ -18,18 +19,21 @@ class Tournament extends Component {
   render() {
     const { pairs } = this.props;
     return (
-      <div className="wrapper__container">
+      <>
         <div className="container">
           <h1> PING PONG</h1>
           <h2> TOURNAMENT</h2>
 
           <h1>{pairs[0]}</h1>
-          <h1>{pairs[(0)[1]]}</h1>
-          <h1>{pairs[0]}</h1>
+          <h1>{pairs[1]}</h1>
+          <h1>{pairs[2]}</h1>
+          <h1>{pairs[3]}</h1>
 
-          <Button label="back" handleClick={this.handleBack} />
+          <Link to={"/"} className="nav-link nav__tournament">
+            <Button label="back" handleClick={this.handleBack} />
+          </Link>
         </div>
-      </div>
+      </>
     );
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "../../App.scss";
 import Players from "../Players";
 import Button from "../Button/Button";
@@ -60,12 +61,15 @@ class Settings extends Component {
             disabled={disabled}
           />
         </form>
-        <Button
-          buttonClass="button grid-child1"
-          label="Start"
-          handleClick={this.handleStart}
-          disabled={players.length !== 8 ? true : false}
-        />
+        <Link to={"/Tournament"} className="nav nav__settings">
+          <Button
+            buttonClass="button grid-child1"
+            label="Start"
+            handleClick={this.handleStart}
+            disabled={players.length !== 8 ? true : false}
+          />
+        </Link>
+
         <Button
           buttonClass="button grid-child2"
           label="Reset"
