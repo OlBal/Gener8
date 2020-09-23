@@ -40,7 +40,6 @@ class Settings extends Component {
   render() {
     const { playerName } = this.state;
     const { players, handleClear } = this.props;
-    const disabled = players.length === 8 ? true : false;
 
     return (
       <div className="container">
@@ -58,7 +57,7 @@ class Settings extends Component {
             buttonClass="button button__form"
             label="Add A Player"
             type="submit"
-            disabled={disabled}
+            disabled={players.length === 8 ? true : false}
           />
         </form>
         <Link to={"/Tournament"} className="nav nav__settings">
