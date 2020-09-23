@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "../../App.scss";
 import Players from "../Players";
 import Button from "../Button/Button";
-import shuffle from "../../data/functions/pairs";
 
 //
 
@@ -11,7 +10,6 @@ class Settings extends Component {
     super(props);
     this.state = {
       playerName: "",
-      pairs: this.props.pairs,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleStart = this.handleStart.bind(this);
@@ -43,15 +41,12 @@ class Settings extends Component {
   //display new pairs
 
   handleStart = () => {
-    const arr = [...this.state.players];
-    this.setState({
-      pairs: shuffle(arr, 2),
-    });
+    this.props.handleStart(this.state);
   };
 
   render() {
     const { playerName } = this.state;
-    const { players } = this.props;
+    const { players, handleClear } = this.props;
     const disabled = players.length === 8 ? true : false;
 
     return (
@@ -84,9 +79,11 @@ class Settings extends Component {
           <Button
             buttonClass="button grid-child4"
             label="Reset"
-            handleClick={this.props.handleClear}
+            handleClick={handleClear}
           />
-          <Players />
+          <article className="player-list">
+            <Players />
+          </article>
         </div>
       </div>
     );
