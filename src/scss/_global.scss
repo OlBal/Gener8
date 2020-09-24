@@ -1,3 +1,20 @@
+$font-path: "./fonts/SpaceGrotesk";
+@font-face {
+  src: url("#{$font-path}/SpaceGrotesk-Bold.woff") format("woff");
+  src: url("#{$font-path}/SpaceGrotesk-Light.woff") format("woff");
+  src: url("#{$font-path}/SpaceGrotesk-Medium.woff") format("woff");
+  src: url("#{$font-path}/SpaceGrotesk-Regular.woff") format("woff");
+  src: url("#{$font-path}/SpaceGrotesk-SemiBold.woff") format("woff");
+
+  font-family: "SpaceGrotesk";
+}
+
+$font-path: "./fonts/Sniglet";
+@font-face {
+  src: url("#{$font-path}/Sniglet.woff") format("woff");
+  font-family: "Sniglet";
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,11 +25,15 @@
 
 h1 h2 h3 h4 h5 h6 {
   margin: 0;
-  font-family: "Helvetica";
+  font-family: "SpaceGroteskVar" sans-serif;
 }
 
 li {
   list-style: none;
   text-decoration: none;
   font-family: "Helvetica";
+}
+
+.title__App {
+  font-family: "Sniglet", sans-serif;
 }

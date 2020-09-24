@@ -2,6 +2,10 @@
   display: -ms-grid;
   display: grid;
 }
+@mixin display-flex {
+  display: -ms-flex;
+  display: flex;
+}
 
 .container {
   @include display-grid;
@@ -71,8 +75,25 @@
   background: hsla(60, 0%, 94%, 100%);
 }
 
-.roster {
+.container__roster {
+  @include display-flex;
+  justify-content: space-between;
+  flex-direction: column;
+  grid-row: 2 / span 8;
+  grid-column: 2 / span 2;
+  align-self: center;
+}
+.pairs {
+  margin: 1rem 0 1rem 0;
+}
+.title__player {
+  padding: 0.5rem 0 0.5rem 0;
 }
 
-.round-one {
+.semi-final {
+  grid-column: 4 / span 2;
+}
+
+.final {
+  grid-column: 6 / span 2;
 }
