@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ping_pong_challenge/static/css/main.c86e061b.chunk.css",
+    "main.js": "/ping_pong_challenge/static/js/main.d523e80d.chunk.js",
+    "main.js.map": "/ping_pong_challenge/static/js/main.d523e80d.chunk.js.map",
+    "runtime-main.js": "/ping_pong_challenge/static/js/runtime-main.5abb32b9.js",
+    "runtime-main.js.map": "/ping_pong_challenge/static/js/runtime-main.5abb32b9.js.map",
+    "static/js/2.c1d051a4.chunk.js": "/ping_pong_challenge/static/js/2.c1d051a4.chunk.js",
+    "static/js/2.c1d051a4.chunk.js.map": "/ping_pong_challenge/static/js/2.c1d051a4.chunk.js.map",
+    "index.html": "/ping_pong_challenge/index.html",
+    "precache-manifest.529c77c593f533a3d9ce85a19cfc6363.js": "/ping_pong_challenge/precache-manifest.529c77c593f533a3d9ce85a19cfc6363.js",
+    "service-worker.js": "/ping_pong_challenge/service-worker.js",
+    "static/css/main.c86e061b.chunk.css.map": "/ping_pong_challenge/static/css/main.c86e061b.chunk.css.map",
+    "static/js/2.c1d051a4.chunk.js.LICENSE.txt": "/ping_pong_challenge/static/js/2.c1d051a4.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/ping_pong_challenge/static/media/SpaceGrotesk-SemiBold.7b228459.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5abb32b9.js",
+    "static/js/2.c1d051a4.chunk.js",
+    "static/css/main.c86e061b.chunk.css",
+    "static/js/main.d523e80d.chunk.js"
+  ]
+}
