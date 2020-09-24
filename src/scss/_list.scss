@@ -6,10 +6,34 @@
   flex-direction: row;
 }
 
+.player-list {
+  text-align: center;
+  justify-self: center;
+  grid-column: 6 / span 2;
+  grid-row: 2 / span 8;
+}
+
+//@media small phone
+@media only screen and (max-width: 600px) {
+  .player-list {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 6;
+  }
+}
+
 .list-item {
   width: 100%;
   font-size: 1.8rem;
   border: 0.1rem black solid;
   border-radius: 0.1rem;
   padding: 0.3rem;
+}
+
+//@media small phone
+@media only screen and (max-width: 600px) {
+  .list-item {
+    width: 100%;
+    font-size: 1.3rem;
+    z-index: 2;
+  }
 }

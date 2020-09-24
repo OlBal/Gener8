@@ -18,49 +18,38 @@
   background-color: hsla(60, 0%, 94%, 100%);
 }
 
+//@media small phone
+@media only screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 1%;
+  }
+}
+
 //Non-Form Buttons
 .grid-child1 {
   grid-column: 5 / span 1;
   grid-row: 4 / span 1;
   z-index: 2;
 }
-
-.grid-child1.grid-child1--colour {
+@media only screen and (max-width: 600px) {
+  .grid-child1 {
+    grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+  }
+}
+.grid-child1--colour {
   background-color: hsla(60, 0%, 94%, 100%);
 }
-
-.grid-child2 {
-  grid-column: 5 / span 1;
-  grid-row: 7;
-  justify-self: center;
-  align-self: end;
+@media only screen and (max-width: 600px) {
+  .grid-child2 {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: center;
+    align-self: end;
+  }
 }
-
-//Player List
-
-.player-list {
-  text-align: center;
-  justify-self: center;
-  grid-column: 6 / span 2;
-  grid-row: 2 / span 8;
-}
-
-//@media tablet
-
-//@media large phone width
-
-// .container {
-//   @include display-grid;
-//   grid-template-columns: repeat(4, 1fr);
-//   grid-template-rows: repeat(8, 1fr);
-//   grid-gap: 1%;
-//   margin: 0;
-//   width: auto;
-//   height: 100vh;
-//   background: hsla(60, 0%, 94%, 100%);
-// }
-
-//@media small phone width
 
 //Tournament Layout
 

@@ -44,6 +44,18 @@
   }
 }
 
+//@media small phone
+@media only screen and (max-width: 600px) {
+  .circle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 28rem;
+    height: 28rem;
+    animation-name: none;
+  }
+}
+
 .circle--red {
   position: absolute;
   left: 56.4%;
@@ -53,4 +65,10 @@
   width: 13rem;
   height: 13rem;
   background-color: $circle--red;
+}
+//@media small phone
+@media only screen and (max-width: 600px) {
+  .circle--red {
+    display: none;
+  }
 }

@@ -44,7 +44,7 @@ class Settings extends Component {
 
     return (
       <div className="container">
-        <h1 className="title__app"> PING PONG</h1>
+        <h1 className="title__app title__app__settings"> PING PONG</h1>
         <form className="form " onSubmit={this.handleAddName}>
           <input
             required

@@ -23,6 +23,15 @@
   border-radius: 0.2rem;
 }
 
+@media only screen and (max-width: 600px) {
+  .form-control {
+    grid-row: 4 / span 1;
+    grid-column: 1 / span 2;
+    font-size: 1rem;
+    padding: 0.6rem;
+  }
+}
+
 .button__form {
   justify-self: center;
   grid-row: 6;
