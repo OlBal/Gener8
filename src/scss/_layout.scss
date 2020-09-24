@@ -57,3 +57,22 @@
 }
 
 //@media small phone width
+
+//Tournament Layout
+
+.container__tournament {
+  @include display-grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: 1.5%;
+  margin: 0;
+  width: auto;
+  height: 100vh;
+  background: hsla(60, 0%, 94%, 100%);
+}
+
+.roster {
+}
+
+.round-one {
+}
