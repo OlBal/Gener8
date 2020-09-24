@@ -1,15 +1,64 @@
 import React, { Component } from "react";
 import "../../App.scss";
-// import Button from "../Button/Button";
+import { Link } from "react-router-dom";
+import Button from "../Button/Button";
+import Matches from "../Matches";
 
 class Tournament extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      winners: [],
+      round: 0,
+    };
   }
+  handleClick = () => {
+    const { winners } = this.state;
+
+    this.setState({
+      winners:
+    });
+  };
+
+  handleSubmit = () => {
+    const { winners } = this.state;
+    handleRoundWinners this
+  };
 
   render() {
-    return <div className="wrapper__container"></div>;
+    const { winners } = this.state;
+    return (
+      <>
+        <div className="container__tournament">
+          <h1 className="title__App">PING PONG</h1>
+
+          <section className="container__roster round-one">
+            <Matches />
+            <Button
+              buttonClass="button"
+              label="Next Round"
+              handleClick={this.handleSubmit}
+              disabled={winners.length === 4 ? false : true}
+            />
+          </section>
+
+          <section className="container__roster semi-final">
+            <h2 className="round__title"></h2>
+            <Button
+              buttonClass="button"
+              label="Next Round"
+              handleClick={this.handleSubmit}
+            />
+          </section>
+
+          <section className="container__roster final"></section>
+
+          <Link to={"/"} className="nav-link nav__tournament">
+            <Button buttonClass="button " label="Settings" />
+          </Link>
+        </div>
+      </>
+    );
   }
 }
 

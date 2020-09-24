@@ -1,9 +1,14 @@
 import { connect } from "react-redux";
-// import { addPlayer, clear } from "../../data/actions";
+import { backButton } from "../../data/actions";
 import Tournament from "./Tournament";
 const mapStateToProps = (state) => {
   return {
     pairs: state.pairs,
+    view: console.log(state.view),
   };
 };
-export default connect(mapStateToProps)(Tournament);
+const mapDispatchToProps = (dispatch) => ({
+  handleBackButton: (value) => dispatch(backButton(value)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tournament);

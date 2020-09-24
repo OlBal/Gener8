@@ -1,36 +1,96 @@
-//Layout Start Screen
-.wrapper__container {
-  width: 100%;
-  height: auto;
-  background: hsla(60, 0%, 94%, 100%);
-  margin: 0;
-}
-
 @mixin display-grid {
   display: -ms-grid;
   display: grid;
+}
+@mixin display-flex {
+  display: -ms-flex;
+  display: flex;
 }
 
 .container {
   @include display-grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 1.5%;
   margin: 0;
   width: auto;
   height: 100vh;
+  background: hsla(60, 0%, 94%, 100%);
 }
 
 .grid-child1 {
-  grid-column: 2/3;
-  grid-row: 5/7;
+  grid-column: 5 / span 1;
+  grid-row: 1 / span 1;
   justify-self: center;
 }
 
 .grid-child2 {
-  grid-column: 2/3;
-  grid-row: 8/10;
+  grid-column: 6 / span 2;
+  grid-row: 2;
+  justify-self: center;
 }
 
-.grid-child3 {
+//Player List
+
+.player-list {
+  text-align: center;
+  justify-self: center;
+  grid-column: 6 / span 2;
+  grid-row: 2 / span 8;
+}
+
+//@media tablet
+
+//@media large phone width
+
+// .container {
+//   @include display-grid;
+//   grid-template-columns: repeat(4, 1fr);
+//   grid-template-rows: repeat(8, 1fr);
+//   grid-gap: 1%;
+//   margin: 0;
+//   width: auto;
+//   height: 100vh;
+//   background: hsla(60, 0%, 94%, 100%);
+// }
+
+.grid-child2 {
+  grid-column: 6 / span 2;
+  grid-row: 7/8;
+  justify-self: center;
+}
+
+//@media small phone width
+
+//Tournament Layout
+
+.container__tournament {
+  @include display-grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: 1.5%;
+  margin: 0;
+  width: auto;
+  height: 100vh;
+  background: hsla(60, 0%, 94%, 100%);
+}
+
+.container__roster {
+  @include display-flex;
+  justify-content: space-between;
+  flex-direction: column;
+  grid-row: 2 / span 8;
+  grid-column: 2 / span 2;
+  align-self: center;
+}
+.pairs {
+  margin: 1rem 0 1rem 0;
+}
+
+.semi-final {
+  grid-column: 4 / span 2;
+}
+
+.final {
+  grid-column: 6 / span 2;
 }

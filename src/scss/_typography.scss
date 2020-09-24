@@ -1,9 +1,0 @@
-$font-path: "../../src/scss/fonts";
-$font-name: "SpaceGrotesk";
-
-@font-face {
-  src: url("#{$font-path}/#{$font-name}-Medium.woff2") format("woff2");
-
-  font-family: "SpaceGrotesk-Medium";
-  font-weight: medium;
-}

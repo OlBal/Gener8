@@ -1,0 +1,39 @@
+.container__roster {
+  justify-content: center;
+}
+
+button.player {
+  &:hover {
+    border: 0.03rem black solid;
+  }
+  &:focus {
+    background: black;
+    border: 0.03rem black solid;
+  }
+}
+
+li.container__roster__list {
+  display: block;
+}
+
+.title__player {
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.pairs {
+  padding: 0.25rem;
+  margin: 1rem 0 1rem 0;
+
+  font-family: "SpaceGrotesk-Medium";
+}
+
+.player {
+  border: none;
+  background: none;
+  display: block;
+  font-size: 1.5rem;
+}
+
+.title__player {
+  font-family: "SpaceGrotesk-Medium";
+}

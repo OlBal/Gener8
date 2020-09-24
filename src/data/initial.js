@@ -1,7 +1,8 @@
 const initial = {
   players: [],
   pairs: [],
-  round: 0,
+  roundWinners: 0,
+  view: true,
 };
 
 export default initial;

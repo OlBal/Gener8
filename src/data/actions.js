@@ -5,7 +5,14 @@ export const addPlayer = (value) => {
   };
 };
 
-export const start = (value) => {
+export const backButton = (value) => {
+  return {
+    type: "BACK",
+    ...value,
+  };
+};
+
+export const startTournament = (value) => {
   return {
     type: "START",
     ...value,
