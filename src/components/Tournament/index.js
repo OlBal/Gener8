@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { backButton } from "../../data/actions";
+import { clear } from "../../data/actions";
 import Tournament from "./Tournament";
 const mapStateToProps = (state) => {
   return {
@@ -8,7 +8,7 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = (dispatch) => ({
-  handleBackButton: (value) => dispatch(backButton(value)),
+  handleClear: (value) => dispatch(clear(value)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tournament);

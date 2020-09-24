@@ -40,11 +40,11 @@ class Settings extends Component {
   render() {
     const { playerName } = this.state;
     const { players, handleClear } = this.props;
+    const disabled = players.length === 8 ? true : false;
 
     return (
       <div className="container">
-        <h1> PING PONG</h1>
-        <h2> TOURNAMENT</h2>
+        <h1 className="title__app"> PING PONG</h1>
         <form className="form " onSubmit={this.handleAddName}>
           <input
             required
@@ -52,17 +52,18 @@ class Settings extends Component {
             type="text"
             value={playerName}
             onChange={this.handleChange}
+            disabled={disabled}
           />
           <Button
             buttonClass="button button__form"
             label="Add A Player"
             type="submit"
-            disabled={players.length === 8 ? true : false}
+            disabled={disabled}
           />
         </form>
-        <Link to={"/Tournament"} className="nav nav__settings">
+        <Link to={"/Tournament"} className="nav nav__settings grid-child1">
           <Button
-            buttonClass="button grid-child1"
+            buttonClass="button grid-child1--colour "
             label="Start"
             handleClick={this.handleStart}
             disabled={players.length !== 8 ? true : false}
@@ -78,9 +79,9 @@ class Settings extends Component {
           <Players />
         </article>
 
-        <div className="circle__container">
-          <div className="circle"></div>
-        </div>
+        <div className="circle"></div>
+
+        <div className="circle--red"></div>
       </div>
     );
   }

@@ -14,15 +14,15 @@ class Tournament extends Component {
   }
   handleClick = () => {
     const { winners } = this.state;
-
     this.setState({
-      winners:
+      winners: winners,
     });
   };
 
   handleSubmit = () => {
-    const { winners } = this.state;
-    handleRoundWinners this
+    const { winners, round } = this.state;
+    this.setState({ winners: winners, round: round + 1 });
+    this.props.handleNextRound(this.state);
   };
 
   render() {
