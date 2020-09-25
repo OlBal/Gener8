@@ -9,6 +9,7 @@ class Tournament extends Component {
     super(props);
     this.state = {
       winners: [],
+      winner: 0,
       round: 0,
     };
   }

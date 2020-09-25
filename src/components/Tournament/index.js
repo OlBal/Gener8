@@ -4,7 +4,7 @@ import Tournament from "./Tournament";
 const mapStateToProps = (state) => {
   return {
     pairs: state.pairs,
-    view: console.log(state.view),
+    view: state.view,
   };
 };
 const mapDispatchToProps = (dispatch) => ({
