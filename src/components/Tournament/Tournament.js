@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import "../../App.scss";
 import { Link } from "react-router-dom";
-// import Semi from "../Semi";
-// import Final from "../Final/Final";
-
-import Button from "../Button/Button";
+import Semi from "../Semi";
+import Final from "../Final";
 import Matches from "../Matches";
+import Button from "../Button/Button";
 
 class Tournament extends Component {
   constructor(props) {
@@ -25,13 +24,7 @@ class Tournament extends Component {
 
           <section className="container__roster semi-final">
             <h2 className="round__title"></h2>
-
-            {/* <Semi /> */}
-            {/* <Button
-              buttonClass="button"
-              label="Next Round"
-              // handleClick={this.handleSubmit}
-            /> */}
+            <Semi />
           </section>
 
           <section className="container__roster final">

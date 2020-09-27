@@ -30,14 +30,16 @@ const playerPairs = (state) => {
   };
 };
 
-//Adds round winners to global array
+//Starts tournament and add one to round state
 
-const roundWinners = (state, { winners }) => {
+const startTournament = (state) => {
   return {
     ...state,
-    roundWinners: [...state.roundWinners, winners],
+    round: state.round + 1,
   };
 };
+
+//Adds round winners to global array
 
 const nextRound = (state) => {
   return {
@@ -46,12 +48,28 @@ const nextRound = (state) => {
   };
 };
 
-const startTournament = (state) => {
+//Takes the winners from the rounds, adds to the winners array
+//
+
+const roundWinners = (state, { winningPlayers }) => {
+  let whoWon = state.roundWinners
+    .concat(winningPlayers)
+    .filter((el) => el === el);
+
+  let newPairs = pairs([...whoWon], 2);
+
   return {
     ...state,
-    round: state.round + 1,
+    roundWinners: newPairs,
   };
 };
+
+// const updateRoundWinners = (state, { winningPlayers }) => {
+//   return {
+//     ...state,
+//     roundWinners: [...state.roundWinners, winningPlayers],
+//   };
+// };
 
 const reducer = (state = initial, action) => {
   switch (action.type) {

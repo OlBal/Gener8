@@ -6,7 +6,7 @@ class Matches extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      winners: [],
+      winningPlayers: [],
     };
     this.handleAddWinners = this.handleAddWinners.bind(this);
     this.handleRound = this.handleRound.bind(this);
@@ -14,11 +14,9 @@ class Matches extends Component {
 
   handleAddWinners = (e) => {
     const winner = e.target.value;
-    console.log(winner);
-
-    this.setState({ winners: [...this.state.winners, winner] });
-
-    console.log(this.state.winners);
+    this.setState({
+      winningPlayers: [...this.state.winningPlayers, winner],
+    });
   };
 
   handleRound = () => {
@@ -27,7 +25,7 @@ class Matches extends Component {
 
   render() {
     const { pairs } = this.props;
-    const { winners } = this.state;
+    const { winningPlayers } = this.state;
     return (
       <>
         {pairs.map((item, index) => (
@@ -48,7 +46,7 @@ class Matches extends Component {
           buttonClass="button"
           label="Next Round"
           handleClick={this.handleRound}
-          disabled={winners.length === 4 ? false : true}
+          disabled={winningPlayers.length === 4 ? false : true}
         />
       </>
     );
