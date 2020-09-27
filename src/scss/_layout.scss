@@ -99,3 +99,41 @@
 
 .nav__tournament {
 }
+
+.title__app__settings {
+  grid-column: 2 / span 2;
+  padding: 0.5rem;
+}
+.title__app__tournament {
+  grid-column: 1 / span 2;
+  padding: 0.5rem;
+}
+
+@mixin title__match {
+  margin: 0;
+  font-size: 2em;
+  justify-self: center;
+  align-self: center;
+  font-family: "Sniglet", sans-serif;
+}
+
+.title__match1 {
+  @include title__match;
+  grid-row: 1 / span 3;
+  grid-column: 1 / span 2;
+}
+.title__match2 {
+  @include title__match;
+  grid-row: 4 / span 1;
+  grid-column: 1 / span 2;
+}
+.title__match3 {
+  @include title__match;
+  grid-row: 6 / span 2;
+  grid-column: 1 / span 2;
+}
+.title__match4 {
+  @include title__match;
+  grid-row: 8 / span 2;
+  grid-column: 1 / span 2;
+}

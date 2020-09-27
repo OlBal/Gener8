@@ -45,9 +45,21 @@ class Settings extends Component {
     return (
       <div className="container">
         <h1 className="title__app title__app__settings"> PING PONG</h1>
+        <div className="textBlock">
+          <p className="playerForm">
+            Enter Your Player's Names Here!
+            <br />
+            <span className="subtext">
+              Make sure you enter 8 names for a tournament
+            </span>
+          </p>
+        </div>
         <form className="form " onSubmit={this.handleAddName}>
           <input
             required
+            id="playerForm"
+            maxlength="15"
+            name="playerForm"
             className="form-control"
             type="text"
             value={playerName}

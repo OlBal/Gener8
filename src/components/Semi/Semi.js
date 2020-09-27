@@ -24,8 +24,9 @@ class Semi extends Component {
   };
 
   render() {
-    const { roundWinners } = this.props;
+    const { roundWinners, round } = this.props;
     const { winningPlayers } = this.state;
+
     return (
       <>
         {roundWinners.map((item, index) => (
@@ -35,7 +36,7 @@ class Semi extends Component {
                 key={index}
                 handleClick={(e) => this.handleAddWinners(e, "value")}
                 label={names}
-                buttonClass="button player"
+                buttonClass={"button player"}
                 value={names}
               />
             ))}
@@ -43,7 +44,7 @@ class Semi extends Component {
         ))}
 
         <Button
-          buttonClass="button"
+          buttonClass={`button ${round !== 2 ? "button__notActive" : null}`}
           label="Next Round"
           handleClick={this.handleRound}
           disabled={winningPlayers.length === 2 ? false : true}

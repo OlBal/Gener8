@@ -20,6 +20,7 @@ class Final extends Component {
   render() {
     const { roundWinners, round } = this.props;
     const { champion } = this.state;
+
     return (
       <>
         {roundWinners.map((item, index) => (
@@ -29,7 +30,7 @@ class Final extends Component {
                 key={index}
                 handleClick={(e) => this.handleAddWinners(e, "value")}
                 label={names}
-                buttonClass="button player"
+                buttonClass={"button player"}
                 value={names}
               />
             ))}
@@ -37,7 +38,7 @@ class Final extends Component {
         ))}
 
         <Button
-          buttonClass="button"
+          buttonClass={`button  ${round !== 3 ? "button__notActive" : null}`}
           label="Next Round"
           handleClick={this.handleRound}
           disabled={champion.length === 1 ? false : true}
