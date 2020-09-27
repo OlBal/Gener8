@@ -1,3 +1,6 @@
+// Using the Fisher Yates shuffle algorithm in a while loop, in order to mix up the player input list before pairing the players.
+//Originally this was done using a sort function but didn't randomise well enough.
+
 const shuffle = (arr) => {
   var m = arr.length,
     temp,
@@ -13,7 +16,3 @@ const shuffle = (arr) => {
 };
 
 export default shuffle;
-
-// for (let i = arr.length - 1; i > 0; i--) {
-//     let j = Math.floor(Math.random() * (i + 1));
-//     [arr[i], arr[j]] = [arr[j], arr[i]];

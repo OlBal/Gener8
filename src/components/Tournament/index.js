@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 import { clear } from "../../data/actions";
 import Tournament from "./Tournament";
-const mapStateToProps = (state) => {
+const mapStateToProps = ({ pairs, round }) => {
   return {
-    pairs: state.pairs,
-    view: state.view,
+    pairs: pairs,
+    round: round,
   };
 };
 const mapDispatchToProps = (dispatch) => ({

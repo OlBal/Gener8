@@ -6,19 +6,22 @@ class Matches extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      winners: [],
+      winningPlayers: [],
+      selected: false,
     };
     this.handleAddWinners = this.handleAddWinners.bind(this);
     this.handleRound = this.handleRound.bind(this);
   }
 
+  // Adds winners to a local array which is then sent
+  // to the global array using the handleNextRound action.
+
   handleAddWinners = (e) => {
     const winner = e.target.value;
-    console.log(winner);
-
-    this.setState({ winners: [...this.state.winners, winner] });
-
-    console.log(this.state.winners);
+    this.setState({
+      selected: !this.state.selected,
+      winningPlayers: [...this.state.winningPlayers, winner],
+    });
   };
 
   handleRound = () => {
@@ -26,8 +29,10 @@ class Matches extends Component {
   };
 
   render() {
-    const { pairs } = this.props;
-    const { winners } = this.state;
+    const { pairs, round } = this.props;
+    const { winningPlayers, selected } = this.state;
+
+    //Here the array of player pairs is being interated over twice. Once to return the pairs from the parent array, and again to return the individual players.
     return (
       <>
         {pairs.map((item, index) => (
@@ -45,10 +50,11 @@ class Matches extends Component {
         ))}
 
         <Button
-          buttonClass="button"
+          buttonClass={`button
+          ${round !== 1 ? "button__notActive" : null}`}
           label="Next Round"
           handleClick={this.handleRound}
-          disabled={winners.length === 4 ? false : true}
+          disabled={winningPlayers.length === 4 ? false : true}
         />
       </>
     );

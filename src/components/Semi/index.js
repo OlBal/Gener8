@@ -1,10 +1,15 @@
 import { connect } from "react-redux";
+import { nextRound } from "../../data/actions";
 import Semi from "./Semi";
 
-const mapStateToProps = ({ pairs }) => {
+const mapStateToProps = ({ roundWinners, round }) => {
   return {
-    pairs: pairs,
+    roundWinners: roundWinners,
+    round: round,
   };
 };
+const mapDispatchToProps = (dispatch) => ({
+  handleNextRound: (value) => dispatch(nextRound(value)),
+});
 
-export default connect(mapStateToProps)(Semi);
+export default connect(mapStateToProps, mapDispatchToProps)(Semi);

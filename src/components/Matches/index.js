@@ -2,9 +2,10 @@ import { connect } from "react-redux";
 import { nextRound } from "../../data/actions";
 import Matches from "./Matches";
 
-const mapStateToProps = ({ pairs }) => {
+const mapStateToProps = ({ pairs, round }) => {
   return {
     pairs: pairs,
+    round: round,
   };
 };
 const mapDispatchToProps = (dispatch) => ({
