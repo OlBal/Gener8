@@ -2,7 +2,7 @@ const initial = {
   players: [],
   pairs: [],
   roundWinners: [],
-  view: true,
+  round: 0,
 };
 
 export default initial;

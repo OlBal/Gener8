@@ -9,37 +9,47 @@ class Matches extends Component {
       winners: [],
     };
     this.handleAddWinners = this.handleAddWinners.bind(this);
+    this.handleRound = this.handleRound.bind(this);
   }
 
   handleAddWinners(e) {
     const winner = e.target.value;
+    console.log(winner);
 
     this.setState({ winners: [...this.state.winners, winner] });
 
     console.log(this.state.winners);
-    this.props.handleAddWinners(this.state);
+  }
+
+  handleRound() {
+    this.props.handleNextRound(this.state);
   }
 
   render() {
     const { pairs } = this.props;
-
+    const { winners } = this.state;
     return (
       <>
-        <ul>
-          {pairs.map((item, index) => (
-            <div className="pairs container__roster__list" key={index}>
-              {item.map((names, index) => (
-                <Button
-                  key={index}
-                  handleClick={(e) => this.handleAddWinners(e, "value")}
-                  label={names}
-                  buttonClass="button player"
-                  value={names}
-                />
-              ))}
-            </div>
-          ))}
-        </ul>
+        {pairs.map((item, index) => (
+          <div className="pairs container__roster__list" key={index}>
+            {item.map((names, index) => (
+              <Button
+                key={index}
+                handleClick={(e) => this.handleAddWinners(e, "value")}
+                label={names}
+                buttonClass="button player"
+                value={names}
+              />
+            ))}
+          </div>
+        ))}
+
+        <Button
+          buttonClass="button"
+          label="Next Round"
+          handleClick={this.handleNextRound}
+          disabled={winners.length === 4 ? false : true}
+        />
       </>
     );
   }

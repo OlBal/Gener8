@@ -11,14 +11,7 @@ const addPlayer = (state, { playerName }) => {
   };
 };
 
-//Shuffles players array and outputs 4 pairs of players
-
-const playerPairs = (state) => {
-  return {
-    ...state,
-    pairs: pairs([...state.players], 2),
-  };
-};
+//Uses Fischer algorithm to shuffle players
 
 const playerShuffle = (state) => {
   return {
@@ -27,6 +20,18 @@ const playerShuffle = (state) => {
   };
 };
 
+//Takes player list and creates an array of
+// player pairs.
+
+const playerPairs = (state) => {
+  return {
+    ...state,
+    pairs: pairs([...state.players], 2),
+  };
+};
+
+//Adds round winners to global array
+
 const roundWinners = (state, { winners }) => {
   return {
     ...state,
@@ -34,17 +39,17 @@ const roundWinners = (state, { winners }) => {
   };
 };
 
-const nextRound = (state, { winners }) => {
+const nextRound = (state) => {
   return {
     ...state,
-    roundWinners: [...state.roundWinners, winners],
+    round: state.round + 1,
   };
 };
 
 const startTournament = (state) => {
   return {
     ...state,
-    view: false,
+    round: state.round + 1,
   };
 };
 
@@ -52,10 +57,10 @@ const reducer = (state = initial, action) => {
   switch (action.type) {
     case "ADD_PLAYER":
       return addPlayer(state, action);
-    case "NEXT_ROUND":
-      return roundWinners(state, action);
     case "START":
       return startTournament(playerPairs(playerShuffle(state, action)));
+    case "NEXT_ROUND":
+      return nextRound(roundWinners(state, action));
     case "CLEAR":
       return initial;
     default:

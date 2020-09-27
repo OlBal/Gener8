@@ -10,27 +10,10 @@ import Matches from "../Matches";
 class Tournament extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      winners: [],
-
-      round: 0,
-    };
+    this.state = {};
   }
-  handleClick = () => {
-    const { winners } = this.state;
-    this.setState({
-      winners: winners,
-    });
-  };
-
-  handleSubmit = () => {
-    const { winners, round } = this.state;
-    this.setState({ winners: winners, round: round + 1 });
-    this.props.handleNextRound(this.state);
-  };
 
   render() {
-    const { winners } = this.state;
     return (
       <>
         <div className="container__tournament">
@@ -38,23 +21,17 @@ class Tournament extends Component {
 
           <section className="container__roster round-one">
             <Matches />
-            <Button
-              buttonClass="button"
-              label="Next Round"
-              handleClick={this.handleSubmit}
-              disabled={winners.length === 4 ? false : true}
-            />
           </section>
 
           <section className="container__roster semi-final">
             <h2 className="round__title"></h2>
 
             {/* <Semi /> */}
-            <Button
+            {/* <Button
               buttonClass="button"
               label="Next Round"
-              handleClick={this.handleSubmit}
-            />
+              // handleClick={this.handleSubmit}
+            /> */}
           </section>
 
           <section className="container__roster final">
