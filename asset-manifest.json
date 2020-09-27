@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ping_pong_challenge/static/css/main.c86e061b.chunk.css",
-    "main.js": "/ping_pong_challenge/static/js/main.d523e80d.chunk.js",
-    "main.js.map": "/ping_pong_challenge/static/js/main.d523e80d.chunk.js.map",
-    "runtime-main.js": "/ping_pong_challenge/static/js/runtime-main.5abb32b9.js",
-    "runtime-main.js.map": "/ping_pong_challenge/static/js/runtime-main.5abb32b9.js.map",
-    "static/js/2.c1d051a4.chunk.js": "/ping_pong_challenge/static/js/2.c1d051a4.chunk.js",
-    "static/js/2.c1d051a4.chunk.js.map": "/ping_pong_challenge/static/js/2.c1d051a4.chunk.js.map",
-    "index.html": "/ping_pong_challenge/index.html",
-    "precache-manifest.529c77c593f533a3d9ce85a19cfc6363.js": "/ping_pong_challenge/precache-manifest.529c77c593f533a3d9ce85a19cfc6363.js",
-    "service-worker.js": "/ping_pong_challenge/service-worker.js",
-    "static/css/main.c86e061b.chunk.css.map": "/ping_pong_challenge/static/css/main.c86e061b.chunk.css.map",
-    "static/js/2.c1d051a4.chunk.js.LICENSE.txt": "/ping_pong_challenge/static/js/2.c1d051a4.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/ping_pong_challenge/static/media/SpaceGrotesk-SemiBold.7b228459.woff"
+    "main.css": "/Ping_Pong_Challenge/static/css/main.95649b8c.chunk.css",
+    "main.js": "/Ping_Pong_Challenge/static/js/main.48321459.chunk.js",
+    "main.js.map": "/Ping_Pong_Challenge/static/js/main.48321459.chunk.js.map",
+    "runtime-main.js": "/Ping_Pong_Challenge/static/js/runtime-main.4cbc9b41.js",
+    "runtime-main.js.map": "/Ping_Pong_Challenge/static/js/runtime-main.4cbc9b41.js.map",
+    "static/js/2.40815ee4.chunk.js": "/Ping_Pong_Challenge/static/js/2.40815ee4.chunk.js",
+    "static/js/2.40815ee4.chunk.js.map": "/Ping_Pong_Challenge/static/js/2.40815ee4.chunk.js.map",
+    "index.html": "/Ping_Pong_Challenge/index.html",
+    "precache-manifest.437070f664d3ef968808244a90850e84.js": "/Ping_Pong_Challenge/precache-manifest.437070f664d3ef968808244a90850e84.js",
+    "service-worker.js": "/Ping_Pong_Challenge/service-worker.js",
+    "static/css/main.95649b8c.chunk.css.map": "/Ping_Pong_Challenge/static/css/main.95649b8c.chunk.css.map",
+    "static/js/2.40815ee4.chunk.js.LICENSE.txt": "/Ping_Pong_Challenge/static/js/2.40815ee4.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/Ping_Pong_Challenge/static/media/Sniglet.9145a484.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.5abb32b9.js",
-    "static/js/2.c1d051a4.chunk.js",
-    "static/css/main.c86e061b.chunk.css",
-    "static/js/main.d523e80d.chunk.js"
+    "static/js/runtime-main.4cbc9b41.js",
+    "static/js/2.40815ee4.chunk.js",
+    "static/css/main.95649b8c.chunk.css",
+    "static/js/main.48321459.chunk.js"
   ]
 }
