@@ -12,18 +12,18 @@ class Matches extends Component {
     this.handleRound = this.handleRound.bind(this);
   }
 
-  handleAddWinners(e) {
+  handleAddWinners = (e) => {
     const winner = e.target.value;
     console.log(winner);
 
     this.setState({ winners: [...this.state.winners, winner] });
 
     console.log(this.state.winners);
-  }
+  };
 
-  handleRound() {
+  handleRound = () => {
     this.props.handleNextRound(this.state);
-  }
+  };
 
   render() {
     const { pairs } = this.props;
@@ -47,7 +47,7 @@ class Matches extends Component {
         <Button
           buttonClass="button"
           label="Next Round"
-          handleClick={this.handleNextRound}
+          handleClick={this.handleRound}
           disabled={winners.length === 4 ? false : true}
         />
       </>
