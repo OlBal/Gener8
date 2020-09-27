@@ -1,9 +1,10 @@
 import { connect } from "react-redux";
 import Final from "./Final";
 
-const mapStateToProps = ({ roundWinners }) => {
+const mapStateToProps = ({ roundWinners, round }) => {
   return {
     roundWinners: roundWinners,
+    round: round,
   };
 };
 

@@ -1,14 +1,3 @@
-$font-path: "./fonts/SpaceGrotesk";
-@font-face {
-  src: url("#{$font-path}/SpaceGrotesk-Bold.woff") format("woff");
-  src: url("#{$font-path}/SpaceGrotesk-Light.woff") format("woff");
-  src: url("#{$font-path}/SpaceGrotesk-Medium.woff") format("woff");
-  src: url("#{$font-path}/SpaceGrotesk-Regular.woff") format("woff");
-  src: url("#{$font-path}/SpaceGrotesk-SemiBold.woff") format("woff");
-
-  font-family: "SpaceGrotesk";
-}
-
 $font-path: "./fonts/Sniglet";
 @font-face {
   src: url("#{$font-path}/Sniglet.woff") format("woff");
@@ -25,7 +14,7 @@ $font-path: "./fonts/Sniglet";
 
 h1 h2 h3 h4 h5 h6 {
   margin: 0;
-  font-family: "SpaceGroteskVar" sans-serif;
+  font-family: "Helvetica" sans-serif;
 }
 
 li {
@@ -36,9 +25,5 @@ li {
 
 .title__app {
   font-family: "Sniglet", sans-serif;
+  font-size: $font--large;
 }
-
-$font--title: 4rem;
-$font--small: 0.75rem;
-$font--medium: 1.25rem;
-$font--large: 2.5rem;

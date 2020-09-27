@@ -49,27 +49,13 @@ const nextRound = (state) => {
 };
 
 //Takes the winners from the rounds, adds to the winners array
-//
 
 const roundWinners = (state, { winningPlayers }) => {
-  let whoWon = state.roundWinners
-    .concat(winningPlayers)
-    .filter((el) => el === el);
-
-  let newPairs = pairs([...whoWon], 2);
-
   return {
     ...state,
-    roundWinners: newPairs,
+    roundWinners: [...state.roundWinners, winningPlayers],
   };
 };
-
-// const updateRoundWinners = (state, { winningPlayers }) => {
-//   return {
-//     ...state,
-//     roundWinners: [...state.roundWinners, winningPlayers],
-//   };
-// };
 
 const reducer = (state = initial, action) => {
   switch (action.type) {

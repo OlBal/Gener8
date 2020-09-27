@@ -23,8 +23,6 @@ li.container__roster__list {
 .pairs {
   padding: 0.25rem;
   margin: 1rem 0 1rem 0;
-
-  font-family: "SpaceGrotesk-Medium";
 }
 
 .player {
@@ -32,8 +30,9 @@ li.container__roster__list {
   background: none;
   display: block;
   font-size: 1.5rem;
+  font-family: "Helvetica", sans-serif;
 }
 
 .title__player {
-  font-family: "SpaceGrotesk-Medium";
+  font-family: "Helvetica", sans-serif;
 }

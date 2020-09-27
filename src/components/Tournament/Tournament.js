@@ -9,14 +9,17 @@ import Button from "../Button/Button";
 class Tournament extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      selected: false,
+    };
   }
 
   render() {
+    const { handleClear } = this.props;
     return (
       <>
         <div className="container__tournament">
-          <h1 className="title__App">PING PONG</h1>
+          <h1 className="title__app">PING PONG</h1>
 
           <section className="container__roster round-one">
             <Matches />
@@ -28,11 +31,15 @@ class Tournament extends Component {
           </section>
 
           <section className="container__roster final">
-            {/* <Final /> */}
+            <Final />
           </section>
 
           <Link to={"/"} className="nav-link nav__tournament">
-            <Button buttonClass="button settings" label="Settings" />
+            <Button
+              buttonClass="button settings"
+              handleClick={handleClear}
+              label="Reset"
+            />
           </Link>
         </div>
       </>

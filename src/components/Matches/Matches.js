@@ -24,7 +24,7 @@ class Matches extends Component {
   };
 
   render() {
-    const { pairs } = this.props;
+    const { pairs, round } = this.props;
     const { winningPlayers } = this.state;
     return (
       <>

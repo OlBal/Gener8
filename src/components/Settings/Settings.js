@@ -76,6 +76,7 @@ class Settings extends Component {
           handleClick={handleClear}
         />
         <article className="player-list">
+          <h1 className="title__app title__app__settings">Players</h1>
           <Players />
         </article>
 

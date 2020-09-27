@@ -6,7 +6,7 @@ class Final extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      champion: "",
+      champion: [],
     };
     this.handleAddWinners = this.handleAddWinners.bind(this);
   }
@@ -18,8 +18,8 @@ class Final extends Component {
   };
 
   render() {
-    const { roundWinners } = this.props;
-    const { winningPlayers } = this.state;
+    const { roundWinners, round } = this.props;
+    const { champion } = this.state;
     return (
       <>
         {roundWinners.map((item, index) => (
@@ -40,7 +40,7 @@ class Final extends Component {
           buttonClass="button"
           label="Next Round"
           handleClick={this.handleRound}
-          disabled={winningPlayers.length === 1 ? false : true}
+          disabled={champion.length === 1 ? false : true}
         />
       </>
     );
