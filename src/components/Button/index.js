@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 import Button from "./Button";
-import { reset } from "../../index";
+import { clear } from "../../data/actions";
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleReset: () => dispatch(reset()),
+    handleClear: (value) => dispatch(clear(value)),
   };
 };
 export default connect(null, mapDispatchToProps)(Button);

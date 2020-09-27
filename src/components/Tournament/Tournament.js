@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import "../../App.scss";
 import { Link } from "react-router-dom";
+// import Semi from "../Semi";
+// import Final from "../Final/Final";
+
 import Button from "../Button/Button";
 import Matches from "../Matches";
 
@@ -9,7 +12,7 @@ class Tournament extends Component {
     super(props);
     this.state = {
       winners: [],
-      winner: 0,
+
       round: 0,
     };
   }
@@ -45,6 +48,8 @@ class Tournament extends Component {
 
           <section className="container__roster semi-final">
             <h2 className="round__title"></h2>
+
+            {/* <Semi /> */}
             <Button
               buttonClass="button"
               label="Next Round"
@@ -52,10 +57,12 @@ class Tournament extends Component {
             />
           </section>
 
-          <section className="container__roster final"></section>
+          <section className="container__roster final">
+            {/* <Final /> */}
+          </section>
 
           <Link to={"/"} className="nav-link nav__tournament">
-            <Button buttonClass="button " label="Settings" />
+            <Button buttonClass="button settings" label="Settings" />
           </Link>
         </div>
       </>

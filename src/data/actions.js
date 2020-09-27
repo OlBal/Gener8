@@ -5,9 +5,9 @@ export const addPlayer = (value) => {
   };
 };
 
-export const backButton = (value) => {
+export const roundWinners = (value) => {
   return {
-    type: "BACK",
+    type: "NEXT_ROUND",
     ...value,
   };
 };

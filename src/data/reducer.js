@@ -27,6 +27,13 @@ const playerShuffle = (state) => {
   };
 };
 
+const roundWinners = (state, { winners }) => {
+  return {
+    ...state,
+    roundWinners: [...state.roundWinners, winners],
+  };
+};
+
 const nextRound = (state, { winners }) => {
   return {
     ...state,
@@ -46,7 +53,7 @@ const reducer = (state = initial, action) => {
     case "ADD_PLAYER":
       return addPlayer(state, action);
     case "NEXT_ROUND":
-      return nextRound(state, action);
+      return roundWinners(state, action);
     case "START":
       return startTournament(playerPairs(playerShuffle(state, action)));
     case "CLEAR":

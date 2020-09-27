@@ -1,7 +1,7 @@
 const initial = {
   players: [],
   pairs: [],
-  roundWinners: 0,
+  roundWinners: [],
   view: true,
 };
 
