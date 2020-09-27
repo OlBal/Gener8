@@ -1,10 +1,12 @@
 # Ping Pong Game Generator
+### DevelopMe Coding Fellowship Technical Challenge
+
 
 ## About
 
 ---
 
-A short project that aimed to take a list of player inputs, randomise the list and output a group of pairs.
+A project that aimed to take a list of player inputs, randomise the list and output a group of pairs.
 
 In addition to this functionality a bracketing system has been added in order to allow for tracking players
 through a tournament.
