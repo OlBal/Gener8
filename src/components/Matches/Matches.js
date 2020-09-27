@@ -13,14 +13,17 @@ class Matches extends Component {
     this.handleRound = this.handleRound.bind(this);
   }
 
+  // Adds winners to a local array which is then sent
+  // to the global array using the handleNextRound action.
+
   handleAddWinners = (e) => {
     const winner = e.target.value;
-
     this.setState({
       selected: !this.state.selected,
       winningPlayers: [...this.state.winningPlayers, winner],
     });
   };
+
   handleRound = () => {
     this.props.handleNextRound(this.state);
   };
@@ -29,6 +32,7 @@ class Matches extends Component {
     const { pairs, round } = this.props;
     const { winningPlayers, selected } = this.state;
 
+    //Here the array of player pairs is being interated over twice. Once to return the pairs from the parent array, and again to return the individual players.
     return (
       <>
         {pairs.map((item, index) => (
