@@ -44,57 +44,53 @@ class Settings extends Component {
 
     return (
       <div className="container">
-        <h1 className="title__app title__app__settings"> PING PONG</h1>
-        <div className="textBlock">
-          <p className="playerForm">
-            Enter Your Player's Names Here!
-            <br />
-            <span className="subtext">
-              Make sure you enter 8 names for a tournament
-            </span>
-          </p>
+        <div className="block__form">
+          <form className="form " onSubmit={this.handleAddName}>
+            <input
+              required
+              id="playerForm"
+              maxlength="15"
+              name="playerForm"
+              className="form-control"
+              type="text"
+              value={playerName}
+              onChange={this.handleChange}
+              disabled={disabled}
+            />
+            <Button
+              buttonClass="button button__form"
+              label="Add A Player"
+              type="submit"
+              disabled={disabled}
+            />
+          </form>
         </div>
-        <form className="form " onSubmit={this.handleAddName}>
-          <input
-            required
-            id="playerForm"
-            maxlength="15"
-            name="playerForm"
-            className="form-control"
-            type="text"
-            value={playerName}
-            onChange={this.handleChange}
-            disabled={disabled}
-          />
+
+        <div className="block__start">
+          <Link to={"/Tournament"} className="nav nav__settings grid-child1">
+            <Button
+              buttonClass="button grid-child1--colour "
+              label="Start"
+              handleClick={this.handleStart}
+              disabled={players.length !== 8 ? true : false}
+            />
+          </Link>
+        </div>
+        <div className="block__reset">
           <Button
-            buttonClass="button button__form"
-            label="Add A Player"
-            type="submit"
-            disabled={disabled}
+            buttonClass="button grid-child2"
+            label="Reset"
+            handleClick={handleClear}
           />
-        </form>
-        <Link to={"/Tournament"} className="nav nav__settings grid-child1">
-          <Button
-            buttonClass="button grid-child1--colour "
-            label="Start"
-            handleClick={this.handleStart}
-            disabled={players.length !== 8 ? true : false}
-          />
-        </Link>
+        </div>
 
-        <Button
-          buttonClass="button grid-child2"
-          label="Reset"
-          handleClick={handleClear}
-        />
-        <article className="player-list">
-          <h1 className="title__app title__app__settings">Players</h1>
-          <Players />
-        </article>
-
-        <div className="circle"></div>
-
-        <div className="circle--red"></div>
+        <div className="block__players">
+          <article className="player-list">
+            <h1 className="title__app title__app__settings">Players</h1>
+            <Players />
+          </article>
+        </div>
+        <div className="block__animated"></div>
       </div>
     );
   }
