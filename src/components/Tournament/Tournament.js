@@ -23,37 +23,25 @@ class Tournament extends Component {
       <>
         <div classname="container__wrapper">
           <div className="container__tournament">
-            <h2 className=" title__tournament">
-              {round === 1
-                ? "Quarter Finals"
-                : round === 2
-                ? "Semi-Finals"
-                : round === 3
-                ? "Final"
-                : "Welcome To The Tournament"}
-            </h2>
-            <h3 className="title__match1">Match 1</h3>
-            <h3 className="title__match2 ">Match 2</h3>
-            <h3 className="title__match3 ">Match 3</h3>
-            <h3 className="title__match4 ">Match 4</h3>
-            <section className="container__roster round-one">
-              <Matches />
+            <section className="container__roster block__round-one ">
+              <Matches className="round-one__match" />
             </section>
-            <section className="container__roster semi-final">
-              <h2 className="round__title"></h2>
+
+            <section className="container__roster semi-final block__semi ">
               <Semi />
             </section>
-            <section className="container__roster final">
+
+            <section className="container__roster block__final">
               <Final />
             </section>
-            <Link to={"/"} className="nav-link nav__tournament">
-              <Button
-                buttonClass="button settings"
-                handleClick={handleClear}
-                label="Reset"
-              />
-            </Link>
           </div>
+          <Link to={"/"} className="">
+            <Button
+              buttonClass="block__reset__tournament"
+              handleClick={handleClear}
+              label="Reset"
+            />
+          </Link>
         </div>
       </>
     );

@@ -42,7 +42,7 @@ class Matches extends Component {
                 key={index}
                 handleClick={(e) => this.handleAddWinners(e, "value")}
                 label={names}
-                buttonClass="button player"
+                buttonClass="block__player"
                 value={names}
               />
             ))}
