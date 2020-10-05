@@ -46,6 +46,9 @@ class Settings extends Component {
       <div className="container">
         <div className="block__form">
           <form className="form " onSubmit={this.handleAddName}>
+            <div className="description">
+              <p>Please Enter 8 Names for a tournament to be generated.</p>
+            </div>
             <input
               required
               id="playerForm"
@@ -58,7 +61,7 @@ class Settings extends Component {
               disabled={disabled}
             />
             <Button
-              buttonClass="button button__form"
+              buttonClass="button__form"
               label="Add A Player"
               type="submit"
               disabled={disabled}

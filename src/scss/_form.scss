@@ -2,18 +2,16 @@
 
 .form {
   @include display-grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
   grid-gap: 0.5rem;
-  grid-row: 4/8;
-  grid-column: 2/5;
   margin: 0;
   position: 45%;
 }
 
 .form-control {
-  grid-row: 6 / span 1;
-  grid-column: 4 / span 3;
+  grid-row: 5 / span 1;
+  grid-column: 5 / span 3;
   font-size: 1.5rem;
   padding: 0.6rem;
   justify-self: center;
@@ -27,9 +25,24 @@
 .button__form {
   justify-self: center;
   align-self: center;
-  grid-row: 7 / span 2;
-  grid-column: 5 / span 2;
+  grid-row: 6 / span 2;
+  grid-column: 5 / span 4;
   background: #23316c;
   font-weight: 400;
-  font-size: $font--medium;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  border: none;
+  color: white;
+  border-radius: 2.5rem 2.5rem;
+}
+
+.description {
+  font-size: 2rem;
+  grid-column: 4 / span 5;
+  grid-row: 1 / span 4;
+  justify-self: center;
+  align-self: center;
+  margin: 0;
+  line-height: 2rem;
+  text-align: center;
 }

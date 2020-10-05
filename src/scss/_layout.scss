@@ -23,24 +23,23 @@
 }
 
 .block__reset {
-  grid-column: 12/17;
-  grid-row: 1/5;
+  grid-column: 11/17;
+  grid-row: 1/6;
   background: #ffe661;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 5rem;
   border: none;
   cursor: pointer;
 }
 
 .block__start {
-  grid-column: 12/17;
+  grid-column: 11/17;
   grid-row: 5/18;
   text-align: center;
   line-height: 20rem;
-
   color: white;
   background: #23316c;
-  font-size: 2rem;
+  font-size: 5rem;
   border: none;
 }
 
