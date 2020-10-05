@@ -1,7 +1,6 @@
-$font-path: "./fonts/Sniglet";
 @font-face {
-  src: url("#{$font-path}/Sniglet.woff") format("woff");
-  font-family: "Sniglet";
+  src: url("./fonts/LeagueSpartan-VF.woff") format("woff");
+  font-family: "LeagueSpartan";
 }
 
 * {
@@ -14,16 +13,18 @@ $font-path: "./fonts/Sniglet";
 
 h1 h2 h3 h4 h5 h6 {
   margin: 0;
-  font-family: "Helvetica" sans-serif;
+  font-family: "LeagueSpartan", sans-serif;
 }
 
 li {
   list-style: none;
   text-decoration: none;
-  font-family: "Helvetica";
+  font-family: "LeagueSpartan", sans-serif;
+  font-weight: medium;
 }
 
 .title__app {
-  font-family: "Sniglet", sans-serif;
+  font-family: "LeagueSpartan", sans-serif;
   font-size: $font--large;
+  font-weight: 500;
 }

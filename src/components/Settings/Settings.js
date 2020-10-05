@@ -66,23 +66,20 @@ class Settings extends Component {
           </form>
         </div>
 
-        <div className="block__start">
-          <Link to={"/Tournament"} className="nav nav__settings grid-child1">
-            <Button
-              buttonClass="button grid-child1--colour "
-              label="Start"
-              handleClick={this.handleStart}
-              disabled={players.length !== 8 ? true : false}
-            />
-          </Link>
-        </div>
-        <div className="block__reset">
+        <Link className=" block__start" to={"/Tournament"}>
           <Button
-            buttonClass="button grid-child2"
-            label="Reset"
-            handleClick={handleClear}
+            buttonClass=" block__start"
+            label="Start"
+            handleClick={this.handleStart}
+            disabled={players.length !== 8 ? true : false}
           />
-        </div>
+        </Link>
+
+        <Button
+          buttonClass="block__reset"
+          label="Reset"
+          handleClick={handleClear}
+        ></Button>
 
         <div className="block__players">
           <article className="player-list">
@@ -90,6 +87,7 @@ class Settings extends Component {
             <Players />
           </article>
         </div>
+
         <div className="block__animated"></div>
       </div>
     );
