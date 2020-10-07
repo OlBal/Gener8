@@ -8,11 +8,6 @@
     background: none;
     color: none;
   }
-  &:active {
-    -moz-box-shadow: inset 0 0 0.2rem #000000;
-    -webkit-box-shadow: inset 0 0 0.2rem#000000;
-    box-shadow: inset 0 0 0.2rem #000000;
-  }
 }
 
 .button__notActive {

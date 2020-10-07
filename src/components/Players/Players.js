@@ -7,10 +7,7 @@ class Players extends Component {
       <ul className="listGroup">
         {players.map((item, index) => (
           <div className="list-item__edit">
-            <li
-              className="list-item list-item--fade list-item--show"
-              key={index}
-            >
+            <li className="list-item " key={index}>
               {item}
             </li>
           </div>
