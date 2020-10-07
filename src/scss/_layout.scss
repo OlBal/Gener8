@@ -9,131 +9,61 @@
 
 .container {
   @include display-grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  grid-gap: 1.5%;
+  grid-template-columns: repeat(24, 1fr);
+  grid-template-rows: repeat(24, 1fr);
   margin: 0;
   width: auto;
   height: 100vh;
-  background-color: hsla(60, 0%, 94%, 100%);
 }
 
-//@media small phone
-@media only screen and (max-width: 600px) {
-  .container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-gap: 1%;
-  }
+.block__form {
+  grid-column: 1/12;
+  grid-row: 1/18;
+  background: #ffa1ba;
+  -webkit-box-shadow: 13px 0px 18px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 13px 0px 18px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 13px 0px 18px -11px rgba(0, 0, 0, 0.75);
 }
 
-//Non-Form Buttons
-.grid-child1 {
-  grid-column: 5 / span 1;
-  grid-row: 4 / span 1;
-  z-index: 2;
+.block__reset {
+  grid-column: 11/17;
+  grid-row: 1/6;
+  background: #ffe661;
+  font-weight: 500;
+  font-size: 5rem;
+  line-height: 100%;
+  border: none;
+  cursor: pointer;
+  -webkit-box-shadow: -15px 20px 18px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -15px 20px 18px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: -15px 20px 18px -11px rgba(0, 0, 0, 0.75);
 }
-@media only screen and (max-width: 600px) {
-  .grid-child1 {
-    grid-column: 5 / span 1;
-    grid-row: 6 / span 1;
-  }
-}
-.grid-child1--colour {
-  background-color: hsla(60, 0%, 94%, 100%);
-}
-
-.grid-child2 {
-  grid-column: 5 / span 1;
-  grid-row: 7 / span 1;
-  justify-self: center;
-}
-
-@media only screen and (max-width: 600px) {
-  .grid-child2 {
-    grid-column: 3;
-    grid-row: 1;
-    justify-self: center;
-    align-self: end;
-  }
+.block__start {
+  grid-column: 11/17;
+  grid-row: 5/18;
+  text-align: center;
+  line-height: 600%;
+  color: white;
+  background: #23316c;
+  font-size: 5rem;
+  border: none;
+  cursor: pointer;
 }
 
-//Tournament Layout
-
-.container__tournament {
-  @include display-grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  grid-gap: 1.5%;
-  margin: 0;
-  width: auto;
-  height: 100vh;
-  background: hsla(60, 0%, 94%, 100%);
+.block__animated {
+  grid-column: 1/17;
+  grid-row: 17/26;
+  background: #ffa138;
+  -webkit-box-shadow: 1px -14px 10px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px -14px 10px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px -14px 10px -11px rgba(0, 0, 0, 0.75);
 }
 
-.container__roster {
-  @include display-flex;
-  justify-content: space-between;
-  flex-direction: column;
-  grid-row: 2 / span 8;
-  grid-column: 2 / span 2;
-  align-self: center;
-  justify-self: center;
-}
-.pairs {
-  margin: 1rem 0 1rem 0;
-}
-
-.semi-final {
-  grid-column: 4 / span 2;
-}
-
-.final {
-  grid-column: 6 / span 2;
-}
-
-.nav-link {
-  grid-column: 7/8;
-  align-self: end;
-}
-
-.nav__tournament {
-}
-
-.title__app__settings {
-  grid-column: 2 / span 2;
-  padding: 0.5rem;
-}
-.title__app__tournament {
-  grid-column: 1 / span 2;
-  padding: 0.5rem;
-}
-
-@mixin title__match {
-  margin: 0;
-  font-size: 2em;
-  justify-self: center;
-  align-self: center;
-  font-family: "Sniglet", sans-serif;
-}
-
-.title__match1 {
-  @include title__match;
-  grid-row: 1 / span 3;
-  grid-column: 1 / span 2;
-}
-.title__match2 {
-  @include title__match;
-  grid-row: 4 / span 1;
-  grid-column: 1 / span 2;
-}
-.title__match3 {
-  @include title__match;
-  grid-row: 6 / span 2;
-  grid-column: 1 / span 2;
-}
-.title__match4 {
-  @include title__match;
-  grid-row: 8 / span 2;
-  grid-column: 1 / span 2;
+.block__players {
+  grid-column: 17/26;
+  grid-row: 1/26;
+  background: #ff3838;
+  -webkit-box-shadow: -10px 1px 11px -11px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -10px 1px 11px -11px rgba(0, 0, 0, 0.75);
+  box-shadow: -10px 1px 11px -11px rgba(0, 0, 0, 0.75);
 }

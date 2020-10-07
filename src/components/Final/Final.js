@@ -20,26 +20,23 @@ class Final extends Component {
   render() {
     const { roundWinners, round } = this.props;
     const { champion } = this.state;
-
     return (
       <>
-        {roundWinners.map((item, index) => (
-          <div className="pairs container__roster__list" key={index}>
-            {item.map((names, index) => (
-              <Button
-                key={index}
-                handleClick={(e) => this.handleAddWinners(e, "value")}
-                label={names}
-                buttonClass={"button player"}
-                value={names}
-              />
-            ))}
-          </div>
+        {roundWinners.map((names, index) => (
+          <Button
+            key={index}
+            handleClick={(e) => this.handleAddWinners(e, "value")}
+            label={names}
+            buttonClass="block__player"
+            value={names}
+          />
         ))}
 
         <Button
-          buttonClass={`button  ${round !== 3 ? "button__notActive" : null}`}
-          label="Next Round"
+          buttonClass={`block__next-round ${
+            round !== 3 ? "button__notActive" : null
+          }`}
+          label="Winner?"
           handleClick={this.handleRound}
           disabled={champion.length === 1 ? false : true}
         />

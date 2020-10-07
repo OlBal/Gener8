@@ -3,7 +3,8 @@
   padding-bottom: 0.7rem;
   display: flex;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 .player-list {
@@ -22,11 +23,12 @@
 }
 
 .list-item {
-  width: 100%;
-  font-size: $font--medium;
-  border: 0.1rem black solid;
-  border-radius: 0.1rem;
-  padding: 0.3rem;
+  width: 80%;
+  text-align: center;
+  font-size: $font--large;
+  color: white;
+  padding: 0.2rem;
+  border-bottom: 0.1rem white solid;
 }
 
 //@media small phone

@@ -7,6 +7,7 @@ class Semi extends Component {
     super(props);
     this.state = {
       winningPlayers: [],
+      selected: false,
     };
     this.handleAddWinners = this.handleAddWinners.bind(this);
     this.handleRound = this.handleRound.bind(this);
@@ -24,30 +25,45 @@ class Semi extends Component {
   };
 
   render() {
-    const { roundWinners, round } = this.props;
-    const { winningPlayers } = this.state;
+    let { roundWinners, round } = this.props;
+    const { winningPlayers, selected } = this.state;
+    let round2 = roundWinners[0];
+    let round3 = roundWinners[1];
 
     return (
       <>
-        {roundWinners.map((item, index) => (
-          <div className="pairs container__roster__list" key={index}>
-            {item.map((names, index) => (
+        {round === 2
+          ? round2.map((names, index) => (
               <Button
                 key={index}
                 handleClick={(e) => this.handleAddWinners(e, "value")}
                 label={names}
-                buttonClass={"button player"}
+                buttonClass={`${
+                  selected === true ? "selected" : "block__player"
+                }`}
                 value={names}
               />
-            ))}
-          </div>
-        ))}
-
+            ))
+          : round === 3
+          ? round3.map((names, index) => (
+              <Button
+                key={index}
+                handleClick={(e) => this.handleAddWinners(e, "value")}
+                label={names}
+                buttonClass={`${
+                  selected === true ? "selected" : "block__player"
+                }`}
+                value={names}
+              />
+            ))
+          : null}
         <Button
-          buttonClass={`button ${round !== 2 ? "button__notActive" : null}`}
           label="Next Round"
           handleClick={this.handleRound}
           disabled={winningPlayers.length === 2 ? false : true}
+          buttonClass={`block__next-round ${
+            round !== 2 ? "button__notActive" : null
+          }`}
         />
       </>
     );

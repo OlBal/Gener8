@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import history from "../../data/history";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import "../../App.scss";
 import Settings from "../Settings";
