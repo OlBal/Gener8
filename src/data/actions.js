@@ -5,7 +5,7 @@ export const addPlayer = (value) => {
   };
 };
 
-export const nextRound = (value) => {
+export const roundWinners = (value) => {
   return {
     type: "NEXT_ROUND",
     ...value,

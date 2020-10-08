@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { nextRound, clear } from "../../data/actions";
+import { roundWinners, clear } from "../../data/actions";
 import Matches from "./Matches";
 
 const mapStateToProps = ({ pairs, round, roundWinners }) => {
@@ -10,7 +10,7 @@ const mapStateToProps = ({ pairs, round, roundWinners }) => {
   };
 };
 const mapDispatchToProps = (dispatch) => ({
-  handleNextRound: (value) => dispatch(nextRound(value)),
+  handleNextRound: (value) => dispatch(roundWinners(value)),
   handleClear: (value) => dispatch(clear(value)),
 });
 

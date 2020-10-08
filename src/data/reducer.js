@@ -39,15 +39,6 @@ const startTournament = (state) => {
   };
 };
 
-//Adds round winners to global array
-
-const nextRound = (state) => {
-  return {
-    ...state,
-    round: state.round + 1,
-  };
-};
-
 //Takes the winners from the rounds, adds to the winners array and breaks them into paired array.
 
 const roundWinners = (state, { winningPlayers }) => {
@@ -55,6 +46,7 @@ const roundWinners = (state, { winningPlayers }) => {
   return {
     ...state,
     roundWinners: [...state.roundWinners, winningPairs],
+    round: state.round + 1,
   };
 };
 
@@ -65,7 +57,7 @@ const reducer = (state = initial, action) => {
     case "START":
       return startTournament(playerPairs(playerShuffle(state, action)));
     case "NEXT_ROUND":
-      return nextRound(roundWinners(state, action));
+      return roundWinners(state, action);
     case "CLEAR":
       return initial;
     default:
