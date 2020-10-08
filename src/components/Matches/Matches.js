@@ -7,7 +7,7 @@ class Matches extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      champion: [],
+      champ: [],
       winningPlayers: [],
       selected: false,
     };
@@ -20,40 +20,46 @@ class Matches extends Component {
 
   handleAddWinners = (e) => {
     const winner = e.target.value;
-    this.setState({
-      selected: !this.state.selected,
-      winningPlayers: [...this.state.winningPlayers, winner],
-    });
+    const { champ } = this.state;
+    const { round } = this.props;
+
+    if (round !== 3) {
+      this.setState({
+        selected: !this.state.selected,
+        winningPlayers: [...this.state.winningPlayers, winner],
+      });
+    } else {
+      this.setState({ champ: [...champ, winner] });
+    }
   };
 
   handleRound = () => {
-    this.props.handleNextRound(this.state);
+    const { round, handleNextRound, handleChampion } = this.props;
+
+    round !== 3 ? handleNextRound(this.state) : handleChampion(this.state);
+
     this.setState({ winningPlayers: [] });
   };
 
-  handleChampion = (e) => {
-    const champ = e.target.value;
-    this.setState({
-      champion: [champ],
-    });
-  };
-
   render() {
-    const { pairs, round, handleClear, roundWinners } = this.props;
-    const { winningPlayers, selected, champion } = this.state;
+    const { pairs, round, handleClear, roundWinners, champion } = this.props;
+    const { winningPlayers, selected, champ } = this.state;
+    const semi = roundWinners[0];
+    const final = roundWinners[1];
+    const champName = champion.map((item) => item);
+
+    const reset =
+      round !== 4 ? "block__reset__tournament" : "block__reset__new-game";
+
     const disabled =
       winningPlayers.length === 4 && round === 1
         ? false
         : winningPlayers.length === 2 && round === 2
         ? false
-        : winningPlayers.length === 1 && round === 3
+        : champ.length === 1 && round === 3
         ? false
         : true;
 
-    const semi = roundWinners[0];
-    const final = roundWinners[1];
-
-    //Here the array of player pairs is being interated over twice. Once to return the pairs from the parent array, and again to return the individual players.
     return (
       <>
         <div classname="container__wrapper">
@@ -65,7 +71,7 @@ class Matches extends Component {
                     {item.map((names, index) => (
                       <Button
                         key={index}
-                        handleClick={(e) => this.handleAddWinners(e, "value")}
+                        handleClick={(e) => this.handleAddWinners(e)}
                         label={names}
                         buttonClass={`${
                           selected === true ? "selected" : "block__player"
@@ -113,21 +119,28 @@ class Matches extends Component {
                 ))}
               </section>
             ) : (
-              <section>
-                <h1>{champion}</h1>
+              <section className="block__champion">
+                <p className="champion__greeting">
+                  Congratulations&nbsp;
+                  <br />
+                  <span className="champion__name">{champName}!</span>
+                  <br /> You've won the whole shebang!
+                </p>
               </section>
             )}
 
             <Button
-              buttonClass="block__next-round"
-              label="Next Round"
+              buttonClass={`${
+                round !== 4 ? "block__next-round" : "button__notActive"
+              }`}
+              label={`${round !== 3 ? "Next Round" : "See Winner"}`}
               handleClick={this.handleRound}
               disabled={disabled}
             />
 
-            <Link to={"/"} className="block__reset__tournament">
+            <Link to={"/"} className={reset}>
               <Button
-                buttonClass="block__reset__tournament"
+                buttonClass={reset}
                 handleClick={handleClear}
                 label="Reset"
               />

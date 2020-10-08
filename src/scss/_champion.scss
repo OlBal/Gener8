@@ -1,0 +1,20 @@
+.block__champion {
+  grid-column: 1/29;
+  grid-row: 1/29;
+  height: 100vh;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffa1ba;
+  text-align: center;
+}
+
+.champion__name {
+  font-weight: 700;
+}
+
+.champion__greeting {
+  width: 60%;
+  font-size: 4rem;
+}

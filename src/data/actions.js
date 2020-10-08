@@ -12,6 +12,13 @@ export const roundWinners = (value) => {
   };
 };
 
+export const champion = (value) => {
+  return {
+    type: "CHAMP",
+    ...value,
+  };
+};
+
 export const startTournament = (value) => {
   return {
     type: "START",

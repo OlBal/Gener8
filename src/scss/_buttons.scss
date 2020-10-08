@@ -1,13 +1,27 @@
-.button {
-  font-family: "LeagueSpartan", sans-serif;
-  background: none;
+.block__player {
+  background: #7b16f0;
+  width: 20%;
   border: none;
-  color: black;
+  border-radius: 0.2rem;
+  color: white;
+  font-size: 2rem;
+  font-family: "LeagueSpartan", sans-serif;
   cursor: pointer;
-  &:hover {
-    background: none;
-    color: none;
-  }
+  padding: 1%;
+  margin: 0 2% 0 2%;
+}
+
+.selected {
+  background: #23316c;
+  width: 20%;
+  border: none;
+  border-radius: 0.2rem;
+  color: white;
+  font-size: 2rem;
+  font-family: "LeagueSpartan", sans-serif;
+  cursor: pointer;
+  padding: 1%;
+  margin: 0 2% 0 2%;
 }
 
 .button__notActive {

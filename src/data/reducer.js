@@ -50,6 +50,14 @@ const roundWinners = (state, { winningPlayers }) => {
   };
 };
 
+const champion = (state, { champ }) => {
+  return {
+    ...state,
+    champion: [...state.champion, champ],
+    round: state.round + 1,
+  };
+};
+
 const reducer = (state = initial, action) => {
   switch (action.type) {
     case "ADD_PLAYER":
@@ -58,6 +66,8 @@ const reducer = (state = initial, action) => {
       return startTournament(playerPairs(playerShuffle(state, action)));
     case "NEXT_ROUND":
       return roundWinners(state, action);
+    case "CHAMP":
+      return champion(state, action);
     case "CLEAR":
       return initial;
     default:
