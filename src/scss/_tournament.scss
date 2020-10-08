@@ -44,20 +44,21 @@
 
 .block__reset__tournament {
   grid-column: 25 / span 3;
-  grid-row: 1;
+  grid-row: 2 / span 1;
   background: #ffe661;
   font-weight: 500;
-  padding: 1rem;
-  font-size: 2rem;
+  font-size: 1rem;
   border: none;
   cursor: pointer;
+  text-align: center;
+  line-height: 3rem;
 }
 
 //Next-Round Button
 
 .block__next-round {
-  grid-column: 13 / span 4;
-  grid-row: 11 / span 1;
+  grid-column: 25 / span 3;
+  grid-row: 6 / span 1;
   width: 100%;
   background: #ffe661;
   font-weight: 500;

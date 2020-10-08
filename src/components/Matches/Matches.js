@@ -28,6 +28,14 @@ class Matches extends Component {
 
   handleRound = () => {
     this.props.handleNextRound(this.state);
+    this.setState({ winningPlayers: [] });
+  };
+
+  handleChampion = (e) => {
+    const champ = e.target.value;
+    this.setState({
+      champion: [champ],
+    });
   };
 
   render() {
@@ -69,36 +77,40 @@ class Matches extends Component {
                 ))}
               </section>
             ) : round === 2 ? (
-              <section className="block__round">
-                <div className="pairs">
-                  {semi.map((names, index) => (
-                    <Button
-                      key={index}
-                      handleClick={(e) => this.handleAddWinners(e, "value")}
-                      label={names}
-                      buttonClass={`${
-                        selected === true ? "selected" : "block__player"
-                      }`}
-                      value={names}
-                    />
-                  ))}
-                </div>
+              <section className="block__round ">
+                {semi.map((names, index) => (
+                  <div className="pairs" key={index}>
+                    {names.map((names, index) => (
+                      <Button
+                        key={index}
+                        handleClick={(e) => this.handleAddWinners(e, "value")}
+                        label={names}
+                        buttonClass={`${
+                          selected === true ? "selected" : "block__player"
+                        }`}
+                        value={names}
+                      />
+                    ))}
+                  </div>
+                ))}
               </section>
             ) : round === 3 ? (
-              <section className="block__round">
-                <div className="pairs">
-                  {final.map((names, index) => (
-                    <Button
-                      key={index}
-                      handleClick={(e) => this.handleAddWinners(e, "value")}
-                      label={names}
-                      buttonClass={`${
-                        selected === true ? "selected" : "block__player"
-                      }`}
-                      value={names}
-                    />
-                  ))}
-                </div>
+              <section className="block__round ">
+                {final.map((names, index) => (
+                  <div className="pairs" key={index}>
+                    {names.map((names, index) => (
+                      <Button
+                        key={index}
+                        handleClick={(e) => this.handleAddWinners(e, "value")}
+                        label={names}
+                        buttonClass={`${
+                          selected === true ? "selected" : "block__player"
+                        }`}
+                        value={names}
+                      />
+                    ))}
+                  </div>
+                ))}
               </section>
             ) : (
               <section>

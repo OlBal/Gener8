@@ -1,6 +1,6 @@
 .block__player {
   background: #7b16f0;
-  width: 15%;
+  width: 20%;
   border: none;
   border-radius: 0.2rem;
   color: white;
@@ -8,11 +8,12 @@
   font-family: "LeagueSpartan", sans-serif;
   cursor: pointer;
   padding: 1%;
+  margin: 0 2% 0 2%;
 }
 
 .selected {
   background: #23316c;
-  width: 15%;
+  width: 20%;
   border: none;
   border-radius: 0.2rem;
   color: white;
@@ -20,11 +21,12 @@
   font-family: "LeagueSpartan", sans-serif;
   cursor: pointer;
   padding: 1%;
+  margin: 0 2% 0 2%;
 }
 
 .pairs {
   @include display-flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-content: center;
   margin: 3rem 0 3rem 0;
   width: 100%;

@@ -48,12 +48,13 @@ const nextRound = (state) => {
   };
 };
 
-//Takes the winners from the rounds, adds to the winners array
+//Takes the winners from the rounds, adds to the winners array and breaks them into paired array.
 
 const roundWinners = (state, { winningPlayers }) => {
+  let winningPairs = pairs(winningPlayers, 2);
   return {
     ...state,
-    roundWinners: [...state.roundWinners, winningPlayers],
+    roundWinners: [...state.roundWinners, winningPairs],
   };
 };
 
