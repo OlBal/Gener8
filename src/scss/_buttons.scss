@@ -1,5 +1,13 @@
-.block__player {
-  background: #7b16f0;
+@mixin reset-button-styles {
+  background: #ffe661;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+@mixin player-button-styles {
   width: 20%;
   border: none;
   border-radius: 0.2rem;
@@ -9,21 +17,49 @@
   cursor: pointer;
   padding: 1%;
   margin: 0 2% 0 2%;
+}
+
+.block__player {
+  background: #7b16f0;
+  @include player-button-styles;
 }
 
 .selected {
   background: #23316c;
-  width: 20%;
-  border: none;
-  border-radius: 0.2rem;
-  color: white;
-  font-size: 2rem;
-  font-family: "LeagueSpartan", sans-serif;
-  cursor: pointer;
-  padding: 1%;
-  margin: 0 2% 0 2%;
+  @include player-button-styles;
+}
+
+//Settings reset button
+
+.block__reset__tournament {
+  @include reset-button-styles;
+  grid-column: 25 / span 3;
+  grid-row: 2 / span 1;
+  font-size: 1rem;
+  line-height: 3rem;
+}
+
+//Next-Round Button
+
+.block__next-round {
+  @include reset-button-styles;
+  grid-column: 25 / span 3;
+  grid-row: 6 / span 1;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
 }
 
 .button__notActive {
   visibility: hidden;
+}
+
+.block__reset__new-game {
+  @include reset-button-styles;
+  grid-row: 11 / span 2;
+  grid-column: 13 / span 3;
+  align-self: center;
+  justify-self: center;
+  font-size: 1.5rem;
+  padding: 0.25rem;
 }

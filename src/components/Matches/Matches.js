@@ -50,6 +50,7 @@ class Matches extends Component {
 
     const reset =
       round !== 4 ? "block__reset__tournament" : "block__reset__new-game";
+    const newGame = `${round !== 4 ? "Reset" : "New Game?"}`;
 
     const disabled =
       winningPlayers.length === 4 && round === 1
@@ -142,7 +143,7 @@ class Matches extends Component {
               <Button
                 buttonClass={reset}
                 handleClick={handleClear}
-                label="Reset"
+                label={newGame}
               />
             </Link>
           </div>
