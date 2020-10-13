@@ -9,7 +9,7 @@ class Matches extends Component {
     this.state = {
       champ: [],
       winningPlayers: [],
-      selected: false,
+      selected: "",
     };
     this.handleAddWinners = this.handleAddWinners.bind(this);
     this.handleRound = this.handleRound.bind(this);
@@ -25,7 +25,7 @@ class Matches extends Component {
 
     if (round !== 3) {
       this.setState({
-        selected: !this.state.selected,
+        selected: winner,
         winningPlayers: [...this.state.winningPlayers, winner],
       });
     } else {
@@ -47,11 +47,10 @@ class Matches extends Component {
     const semi = roundWinners[0];
     const final = roundWinners[1];
     const champName = champion.map((item) => item);
-
     const reset =
       round !== 4 ? "block__reset__tournament" : "block__reset__new-game";
     const newGame = `${round !== 4 ? "Reset" : "New Game?"}`;
-
+    const buttonClick = `${selected ? "selected" : "block__player"}`;
     const disabled =
       winningPlayers.length === 4 && round === 1
         ? false
@@ -75,7 +74,9 @@ class Matches extends Component {
                         handleClick={(e) => this.handleAddWinners(e)}
                         label={names}
                         buttonClass={`${
-                          selected === true ? "selected" : "block__player"
+                          selected === winningPlayers
+                            ? "selected"
+                            : "block__player"
                         }`}
                         value={names}
                       />
@@ -92,9 +93,7 @@ class Matches extends Component {
                         key={index}
                         handleClick={(e) => this.handleAddWinners(e, "value")}
                         label={names}
-                        buttonClass={`${
-                          selected === true ? "selected" : "block__player"
-                        }`}
+                        buttonClass={buttonClick}
                         value={names}
                       />
                     ))}
@@ -110,9 +109,7 @@ class Matches extends Component {
                         key={index}
                         handleClick={(e) => this.handleAddWinners(e, "value")}
                         label={names}
-                        buttonClass={`${
-                          selected === true ? "selected" : "block__player"
-                        }`}
+                        buttonClass={buttonClick}
                         value={names}
                       />
                     ))}
