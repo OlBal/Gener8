@@ -27,8 +27,12 @@ class Settings extends Component {
 
   handleAddName = (e) => {
     e.preventDefault();
-    this.setState({ playerName: this.state.playerName });
-    this.props.handleAdd(this.state);
+
+    if (this.state.playerName) {
+      this.setState({ playerName: this.state.playerName });
+      this.props.handleAdd(this.state);
+    }
+    this.setState({ playerName: "" });
   };
 
   /* Shuffle function to randomise & create new pairings */
@@ -45,7 +49,7 @@ class Settings extends Component {
     return (
       <div className="container">
         <div className="block__form">
-          <form className="form " onSubmit={this.handleAddName}>
+          <form className="form" onSubmit={this.handleAddName}>
             <div className="description">
               <p>Please Enter 8 Names for a tournament to be generated.</p>
             </div>
