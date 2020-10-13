@@ -1,4 +1,4 @@
-# Ping Pong Game Generator
+# Tournament Generator
 ### DevelopMe Coding Fellowship Technical Challenge
 
 
