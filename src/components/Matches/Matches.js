@@ -9,7 +9,7 @@ class Matches extends Component {
     this.state = {
       champ: [],
       winningPlayers: [],
-      selected: "",
+      selected: null,
     };
     this.handleAddWinners = this.handleAddWinners.bind(this);
     this.handleRound = this.handleRound.bind(this);
@@ -18,14 +18,14 @@ class Matches extends Component {
   // Adds winners to a local array which is then sent
   // to the global array using the handleNextRound action.
 
-  handleAddWinners = (e) => {
+  handleAddWinners = (e, pairIndex, itemIndex) => {
     const winner = e.target.value;
     const { champ } = this.state;
     const { round } = this.props;
 
     if (round !== 3) {
       this.setState({
-        selected: winner,
+        selected: `${pairIndex}-${itemIndex}`,
         winningPlayers: [...this.state.winningPlayers, winner],
       });
     } else {
@@ -50,7 +50,7 @@ class Matches extends Component {
     const reset =
       round !== 4 ? "block__reset__tournament" : "block__reset__new-game";
     const newGame = `${round !== 4 ? "Reset" : "New Game?"}`;
-    const buttonClick = `${selected ? "selected" : "block__player"}`;
+
     const disabled =
       winningPlayers.length === 4 && round === 1
         ? false
@@ -66,18 +66,20 @@ class Matches extends Component {
           <div className="container__tournament">
             {round === 1 ? (
               <section className="block__round ">
-                {pairs.map((item, index) => (
-                  <div className="pairs" key={index}>
-                    {item.map((names, index) => (
+                {pairs.map((item, pairIndex) => (
+                  <div className="pairs" key={pairIndex}>
+                    {item.map((names, itemIndex) => (
                       <Button
-                        key={index}
-                        handleClick={(e) => this.handleAddWinners(e)}
+                        key={itemIndex}
+                        handleClick={(e) =>
+                          this.handleAddWinners(e, pairIndex, itemIndex)
+                        }
                         label={names}
-                        buttonClass={`${
-                          selected === winningPlayers
+                        buttonClass={
+                          `${pairIndex}-${itemIndex}` === selected
                             ? "selected"
                             : "block__player"
-                        }`}
+                        }
                         value={names}
                       />
                     ))}
@@ -86,14 +88,20 @@ class Matches extends Component {
               </section>
             ) : round === 2 ? (
               <section className="block__round ">
-                {semi.map((names, index) => (
-                  <div className="pairs" key={index}>
-                    {names.map((names, index) => (
+                {semi.map((names, pairIndex) => (
+                  <div className="pairs" key={pairIndex}>
+                    {names.map((names, itemIndex) => (
                       <Button
-                        key={index}
-                        handleClick={(e) => this.handleAddWinners(e, "value")}
+                        key={itemIndex}
+                        handleClick={(e) =>
+                          this.handleAddWinners(e, pairIndex, itemIndex)
+                        }
                         label={names}
-                        buttonClass={buttonClick}
+                        buttonClass={
+                          `${pairIndex}-${itemIndex}` === selected
+                            ? "selected"
+                            : "block__player"
+                        }
                         value={names}
                       />
                     ))}
@@ -102,14 +110,18 @@ class Matches extends Component {
               </section>
             ) : round === 3 ? (
               <section className="block__round ">
-                {final.map((names, index) => (
-                  <div className="pairs" key={index}>
-                    {names.map((names, index) => (
+                {final.map((names, pairIndex) => (
+                  <div className="pairs" key={pairIndex}>
+                    {names.map((names, itemIndex) => (
                       <Button
-                        key={index}
+                        key={itemIndex}
                         handleClick={(e) => this.handleAddWinners(e, "value")}
                         label={names}
-                        buttonClass={buttonClick}
+                        buttonClass={
+                          `${pairIndex}-${itemIndex}` === selected
+                            ? "selected"
+                            : "block__player"
+                        }
                         value={names}
                       />
                     ))}
@@ -122,7 +134,7 @@ class Matches extends Component {
                   Congratulations&nbsp;
                   <br />
                   <span className="champion__name">{champName}!</span>
-                  <br /> You've won the whole shebang!
+                  <br /> You've won the tournament!
                 </p>
               </section>
             )}
