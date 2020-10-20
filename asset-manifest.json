@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Ping_Pong_Challenge/static/css/main.95649b8c.chunk.css",
-    "main.js": "/Ping_Pong_Challenge/static/js/main.48321459.chunk.js",
-    "main.js.map": "/Ping_Pong_Challenge/static/js/main.48321459.chunk.js.map",
-    "runtime-main.js": "/Ping_Pong_Challenge/static/js/runtime-main.4cbc9b41.js",
-    "runtime-main.js.map": "/Ping_Pong_Challenge/static/js/runtime-main.4cbc9b41.js.map",
-    "static/js/2.40815ee4.chunk.js": "/Ping_Pong_Challenge/static/js/2.40815ee4.chunk.js",
-    "static/js/2.40815ee4.chunk.js.map": "/Ping_Pong_Challenge/static/js/2.40815ee4.chunk.js.map",
-    "index.html": "/Ping_Pong_Challenge/index.html",
-    "precache-manifest.437070f664d3ef968808244a90850e84.js": "/Ping_Pong_Challenge/precache-manifest.437070f664d3ef968808244a90850e84.js",
-    "service-worker.js": "/Ping_Pong_Challenge/service-worker.js",
-    "static/css/main.95649b8c.chunk.css.map": "/Ping_Pong_Challenge/static/css/main.95649b8c.chunk.css.map",
-    "static/js/2.40815ee4.chunk.js.LICENSE.txt": "/Ping_Pong_Challenge/static/js/2.40815ee4.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/Ping_Pong_Challenge/static/media/Sniglet.9145a484.woff"
+    "main.css": "/Gener8/static/css/main.3ccd6e07.chunk.css",
+    "main.js": "/Gener8/static/js/main.d55e8fb0.chunk.js",
+    "main.js.map": "/Gener8/static/js/main.d55e8fb0.chunk.js.map",
+    "runtime-main.js": "/Gener8/static/js/runtime-main.8c424e67.js",
+    "runtime-main.js.map": "/Gener8/static/js/runtime-main.8c424e67.js.map",
+    "static/js/2.5b5401c9.chunk.js": "/Gener8/static/js/2.5b5401c9.chunk.js",
+    "static/js/2.5b5401c9.chunk.js.map": "/Gener8/static/js/2.5b5401c9.chunk.js.map",
+    "index.html": "/Gener8/index.html",
+    "precache-manifest.7215baeb1c989b178a8219a509040f75.js": "/Gener8/precache-manifest.7215baeb1c989b178a8219a509040f75.js",
+    "service-worker.js": "/Gener8/service-worker.js",
+    "static/css/main.3ccd6e07.chunk.css.map": "/Gener8/static/css/main.3ccd6e07.chunk.css.map",
+    "static/js/2.5b5401c9.chunk.js.LICENSE.txt": "/Gener8/static/js/2.5b5401c9.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/Gener8/static/media/LeagueSpartan-VF.20c408a0.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.4cbc9b41.js",
-    "static/js/2.40815ee4.chunk.js",
-    "static/css/main.95649b8c.chunk.css",
-    "static/js/main.48321459.chunk.js"
+    "static/js/runtime-main.8c424e67.js",
+    "static/js/2.5b5401c9.chunk.js",
+    "static/css/main.3ccd6e07.chunk.css",
+    "static/js/main.d55e8fb0.chunk.js"
   ]
 }
