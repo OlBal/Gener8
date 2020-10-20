@@ -30,19 +30,16 @@
   grid-row: 1/6;
   background: #ffe661;
   font-weight: 500;
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 100%;
   border: none;
   cursor: pointer;
-  -webkit-box-shadow: -15px 20px 18px -11px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -15px 20px 18px -11px rgba(0, 0, 0, 0.75);
-  box-shadow: -15px 20px 18px -11px rgba(0, 0, 0, 0.75);
 }
 .block__start {
   grid-column: 11/17;
   grid-row: 5/18;
   text-align: center;
-  line-height: 600%;
+  height: 100%;
   color: white;
   background: #23316c;
   font-size: 5rem;
