@@ -11,6 +11,10 @@ A project that aimed to take a list of player inputs, randomise the list and out
 In addition to this functionality a bracketing system has been added in order to allow for tracking players
 through a tournament.
 
+View the app online:
+
+http://olbal.github.io/Gener8
+
 --
 
 ## To Run The App
@@ -45,9 +49,7 @@ Start the app
 $ npm start
 ```
 
-Or view the app online:
 
-http://olbal.github.io/Ping_Pong_Challenge
 
 ---
 
